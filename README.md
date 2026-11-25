@@ -1,4 +1,9 @@
 # NewsBot Intelligence System
+
+## Final capstone — NewsBot 2.0
+
+**Start here for the December 2026 final project:** [NewsBot 2.0 implementation](final-newsbot-2.0/README.md) · [Final review and verified results](final-newsbot-2.0/docs/FINAL_SUBMISSION_REVIEW.md) · [Successful final CI (27 tests)](https://github.com/jtuozzo1616/Mid-Term-Jose-Group-NewsBot-Intelligence-System/actions/runs/45679903622). The original midterm and historical BBC evaluation are preserved below.
+
 **ITAI 2373 — Natural Language Processing | Midterm Project**
 
 **José Miguel Tuozzo Izaguirre**  
