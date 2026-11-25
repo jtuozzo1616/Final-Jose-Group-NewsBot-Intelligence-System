@@ -157,7 +157,11 @@ for i,(title,sub,items,note) in enumerate(slides,1):
     elif i==13:
         shot=ROOT/'evidence'/'screenshots'/'05-research-lab.png'
         if shot.exists():
-            slide.shapes.add_picture(str(shot),Inches(6.1),Inches(2.88),width=Inches(6.5))
+            from PIL import Image as PILImage
+            with PILImage.open(shot) as im:
+                w,h=im.size
+            ww=min(6.5,3.65*w/h)
+            slide.shapes.add_picture(str(shot),Inches(6.1+(6.5-ww)/2),Inches(2.88),width=Inches(ww))
         for j,item in enumerate(items):
             tx(slide,.72,3.12+j*.92,5.3,.86,'•  '+item,19,'FFFFFF')
         tx(slide,.72,6.02,5.2,.46,'Actual Chromium capture · verified prior run',12,'59D1C6')
