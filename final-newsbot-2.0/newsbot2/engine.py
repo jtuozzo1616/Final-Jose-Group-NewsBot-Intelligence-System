@@ -35,8 +35,8 @@ class NewsBotEngine:
                 'provenance':{'article_id':a.article_id,'sha256':a.sha256,
                               'synthetic':a.synthetic,'source':a.source}}
 
-    def search(self,query:str,k:int=5)->list[dict]:
-        return [x.to_dict() for x in self.retriever.search(query,k)]
+    def search(self,query:str,k:int=5,language:str|None=None)->list[dict]:
+        return [x.to_dict() for x in self.retriever.search(query,k,language)]
 
     def ask(self,question:str)->dict:
         return self.chat.ask(question)

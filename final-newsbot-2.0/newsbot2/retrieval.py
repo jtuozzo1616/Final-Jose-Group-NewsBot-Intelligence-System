@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.decomposition import TruncatedSVD
 from sklearn.preprocessing import normalize
-from .language import pivot_terms
+from .language import pivot_terms, detect_language, tokens
 from .analysis import split_sentences
 from .schemas import SearchHit, Article
 
@@ -51,14 +51,19 @@ class Retriever:
             if self.svd is not None:
                 q=normalize(self.svd.transform(q))
             scores=cosine_similarity(q,self.vectors).ravel()
-        order=sorted(range(len(scores)),key=lambda i:(-float(scores[i]),self.articles[i].article_id))
+        if language not in (None, 'en', 'es', 'fr', 'de', 'und'):
+            raise ValueError('Unsupported language filter')
+        eligible = [i for i, a in enumerate(self.articles) if language is None or (a.language if a.language != 'auto' else detect_language(a.full_text)['language']) == language]
+        order=sorted(eligible,key=lambda i:(-float(scores[i]),self.articles[i].article_id))
         hits=[]
-        for i in order[:max(1,min(k,20))]:
+        for i in order[:max(0,min(k,20))]:
             score=float(scores[i]); a=self.articles[i]
             if score<=0.000001: continue
             sentences=split_sentences(a.body)
-            # Snippet is verbatim content, not a generated or rephrased 'quote'.
-            excerpt=' '.join(sentences[:2])[:390] if sentences else a.body[:390]
+            # Rank adjacent sentence windows by query overlap; retain contiguous source wording.
+            query_terms = set(tokens(pivot_terms(query)))
+            windows = [' '.join(sentences[j:j+2]) for j in range(len(sentences))]
+            excerpt = max(windows, key=lambda w: len(query_terms & set(tokens(pivot_terms(w)))))[:390] if windows else a.body[:390]
             hits.append(SearchHit(a.article_id,a.title,round(score,4),excerpt,
                                   a.source,a.synthetic,self.method))
         return hits

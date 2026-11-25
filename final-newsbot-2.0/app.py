@@ -31,7 +31,7 @@ div[data-testid="stMetric"] { background:#15273c;border:1px solid #2a475d;paddin
 
 def get_engine():
     if 'engine' not in st.session_state:
-        trusted=ROOT/'outputs'/'newsbot_classifier.joblib'
+        trusted=next((p for p in (ROOT/'outputs'/'newsbot_classifier.joblib', ROOT.parent/'outputs'/'newsbot_classifier.joblib') if p.is_file()), ROOT/'outputs'/'newsbot_classifier.joblib')
         if trusted.exists():
             clf=Classifier.from_trusted_joblib(str(trusted))
             st.session_state.engine=NewsBotEngine(import_articles(ROOT/'data/demo_news.jsonl'),classifier=clf)
@@ -60,7 +60,7 @@ with st.sidebar:
             st.rerun()
         except Exception as exc:st.error(str(exc))
     if st.button('Restore synthetic demonstration',use_container_width=True):
-        trusted=ROOT/'outputs'/'newsbot_classifier.joblib'
+        trusted=next((p for p in (ROOT/'outputs'/'newsbot_classifier.joblib', ROOT.parent/'outputs'/'newsbot_classifier.joblib') if p.is_file()), ROOT/'outputs'/'newsbot_classifier.joblib')
         clf=Classifier.from_trusted_joblib(str(trusted)) if trusted.exists() else None
         st.session_state.engine=NewsBotEngine(import_articles(ROOT/'data/demo_news.jsonl'),classifier=clf)
         if clf is None:st.session_state.engine.train_local_classifier()
@@ -109,7 +109,7 @@ with tabs[1]:
         doc=eng.analyze(selected)
         st.caption(f"Source: {doc['provenance']['source']} · SHA-256: {doc['provenance']['sha256'][:24]}…")
         if doc['provenance']['synthetic']:st.warning('This selected item is a fictional educational fixture.')
-        st.markdown(f"#### {doc['article']['title']}")
+        st.subheader(doc['article']['title'])
         st.write(doc['article']['body'])
         left,right=st.columns(2)
         with left:
@@ -135,7 +135,8 @@ with tabs[2]:
     st.subheader('Cross-language evidence discovery')
     st.caption('EN / ES / FR / DE keyword-pivot fallback. Optional multilingual sentence embeddings enable true semantic retrieval.')
     query=st.text_input('What are you researching?',value='investigación de inteligencia artificial')
-    results=eng.search(query,k=6)
+    language_filter=st.selectbox('Source language', ['All','en','es','fr','de','und'])
+    results=eng.search(query,k=6,language=None if language_filter=='All' else language_filter)
     if not results:st.warning('No relevant articles found. Try a term present in the corpus.')
     for hit in results:
         with st.container(border=True):

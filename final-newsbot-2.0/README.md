@@ -35,6 +35,7 @@ python -m newsbot2.cli search --query "robot navigation sensors"
 python -m newsbot2.cli search --retrieval-mode lsa --query "robot navigation sensors"
 python -m newsbot2.cli ask --query "What did the AI chip researchers measure?"
 python run_research.py
+python run_robustness.py
 streamlit run app.py
 ```
 
@@ -118,7 +119,7 @@ The initial model download requires internet access and storage; CPU inference w
 
 ## Academic submission mapping
 
-The project brief lists five separate deliverables; technical documentation and executive summary PDFs are generated using `python generate_submission_docs.py` and provided separately for Canvas upload. A **draft** reflective journal is provided for personal revision before submission. **Slides intentionally are not generated yet**, as requested: a matching presentation and slide-by-slide speech will be prepared when the student confirms the software is satisfactory.
+The project brief lists five separate deliverables; technical documentation and executive summary PDFs are generated using `python generate_submission_docs.py` and provided separately for Canvas upload. A **draft** reflective journal is provided for personal revision before submission. A presentation video may be uploaded separately to Canvas; verify that it demonstrates the final version.
 
 **Naming note:** `JoseGroup` is a provisional group label borrowed from the former repository naming. Replace it if your Canvas group name differs. The separately downloaded detailed Canvas final-project instructions and web bonus requirements were not included with the assignment description; verify every rubric item against those source documents.
 
@@ -136,3 +137,7 @@ The project brief lists five separate deliverables; technical documentation and 
 ### CPU latent semantic alternative
 
 The optional `--retrieval-mode lsa` projects TF-IDF features through truncated SVD and retrieves by cosine similarity in the lower-dimensional latent space. This is an in-corpus **LSA baseline**, not equivalent to pretrained cross-language semantic embeddings. No GPU or model download required.
+
+## Final quality extension
+
+`run_robustness.py` reports paired out-of-fold baseline/pivot/character-feature classification and leave-one-language-out stress tests on the fictional corpus. The same splits are shared across alternatives. It does not select a winner on the test set or claim external validation. Run `python run_robustness.py` to produce `artifacts/robustness_results.json`. Search now supports source-language filtering and query-relevant contiguous evidence excerpts; regression tests cover both. [Previously successful final CI](https://github.com/jtuozzo1616/Mid-Term-Jose-Group-NewsBot-Intelligence-System/actions/runs/42949516096) applies to the preceding revision only.
