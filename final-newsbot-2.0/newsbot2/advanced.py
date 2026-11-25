@@ -27,17 +27,21 @@ def discover_topics(articles,n_topics=4,method='lda'):
         k=min(max(2,int(n_topics)),8,X.shape[0]-1,X.shape[1]-1)
         if k<2:return {'status':'insufficient_vocabulary'}
         model=LatentDirichletAllocation(n_components=k,random_state=42,max_iter=15,learning_method='batch') if method=='lda' else NMF(n_components=k,init='nndsvda',random_state=42,max_iter=400)
-        weights=normalize(model.fit_transform(X),norm='l1')
+        raw_weights=model.fit_transform(X)
+        zero_rows=raw_weights.sum(axis=1)<=1e-12
+        weights=normalize(raw_weights,norm='l1')
+        # NMF may produce no active component: use an explicitly flagged uniform prior.
+        weights[zero_rows]=1.0/k
         clusters=KMeans(n_clusters=k,random_state=42,n_init=10).fit_predict(weights)
         labels=weights.argmax(axis=1)
         names=vec.get_feature_names_out()
         topics=[{'topic_id':i,'terms':[str(names[j]) for j in model.components_[i].argsort()[-8:][::-1]],'article_count':int((labels==i).sum())} for i in range(k)]
-        docs=[{'article_id':a.article_id,'topic_id':int(labels[i]),'cluster_id':int(clusters[i]),'distribution':weights[i].round(6).tolist(),'month':month(a.published_at)} for i,a in enumerate(articles)]
+        docs=[{'article_id':a.article_id,'topic_id':int(labels[i]),'cluster_id':int(clusters[i]),'uninformative_topic_weights':bool(zero_rows[i]),'distribution':weights[i].round(6).tolist(),'month':month(a.published_at)} for i,a in enumerate(articles)]
         periods=defaultdict(list)
         for d,w in zip(docs,weights):
             if d['month']:periods[d['month']].append(w)
         evolution=[{'month':m,'documents':len(v),'mean_topic_weights':np.mean(v,axis=0).round(6).tolist()} for m,v in sorted(periods.items())]
-        return {'status':'ok','method':method.upper(),'topics':topics,'documents':docs,'evolution':evolution,'missing_dates':sum(d['month'] is None for d in docs),'trend_status':'descriptive' if len(evolution)>1 else 'insufficient_time_periods','warning':'Exploratory corpus-specific topics and clusters; no independent ground truth.'}
+        return {'status':'ok','method':method.upper(),'topics':topics,'documents':docs,'evolution':evolution,'uninformative_documents':int(zero_rows.sum()),'missing_dates':sum(d['month'] is None for d in docs),'trend_status':'descriptive' if len(evolution)>1 else 'insufficient_time_periods','warning':'Exploratory corpus-specific topics and clusters; no independent ground truth.'}
     except ValueError as e:return {'status':'unavailable','reason':str(e)}
 
 def sentiment_timeline(articles):
