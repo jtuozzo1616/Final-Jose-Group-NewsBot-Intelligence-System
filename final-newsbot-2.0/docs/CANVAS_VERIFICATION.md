@@ -1,3 +1,17 @@
-# Canvas verification status
-
-The available assignment overview requires four NLP modules, GitHub link, technical report, executive summary, presentation and reflective journal, and lists two optional bonus categories (web frontend 30 and advanced research 20). The separate Complete Final Project Instructions and Web Application Instructions have not been supplied. A search of available course files did not find those downloads. The [review crosswalk](FINAL_SUBMISSION_REVIEW.md) is therefore limited to the overview. Do not claim full compliance with unseen criteria. Compare both actual Canvas documents before submission, particularly required algorithms, model generation/translation, evaluation metrics, presentation length, submission names, team policy and hosting specifications.
+# Detailed rubric crosswalk — supplied 18-page assignment
+Core 200: repository 50; advanced analysis 75; documentation 40; presentation 35. The document also gives assessment lenses 100 technical + 50 documentation + 50 presentation; do not add the two scales. Bonus up to 50.
+| Item | Evidence | Status |
+|---|---|---|
+| Repository structure and quality (50) | src facade, config, notebooks, tests, data, docs, reports, README | source published; portfolio placement and run verification required |
+| Topic discovery (20) | advanced.py LDA/NMF, monthly distributions, K-means, UI charts | implemented; dated multi-period evaluation limited |
+| Language models (20) | MMR, contextual retrieval, template generation, expansion, verified MiniLM | embedding execution verified; pretrained text generation separate, not assumed |
+| Multilingual (20) | ES→EN Argos evidence, four language hints, comparison | ES→EN verified; cultural interpretation requires human context |
+| Conversation (15) | intent routing, multi-part filters, context, cited answers | implemented, tests and browser run required |
+| Technical docs (15) | architecture, API, installation, configuration | published |
+| User docs (15) | guide, tutorials, FAQ, demo | recorded video remains student task |
+| Business docs (10) | ROI scenario, use cases, competitor comparison | published |
+| Presentation (35) | 18 slides with notes, live real-data demo plan | student must rehearse and deliver 15 minutes |
+| Reflection | 3 pages, contribution, challenges, lessons, future | revised reading draft requires student approval |
+| Web bonus (30) | Streamlit, batch, charts, deployment guide | public URL not verified |
+| Research bonus (20) | paired ablation, lexical vs neural retrieval, real-data evaluation | controlled extensions; examples of advanced research are not all implemented |
+Source PDF shows August 7, 2024, an older deadline; use actual current Canvas assignment date. Required individual portfolio folder: ITAI2373-NewsBot-Final. Academic integrity expressly requires attribution of external resources, libraries and AI assistance, actual personal contributions and original core work. Confirm solo/group approval with instructor.

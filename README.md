@@ -37,6 +37,10 @@ The reflection is the November 25 student-supplied version, not the earlier draf
 - [Executed notebook and browser evidence](final-newsbot-2.0/evidence/) — prior run verified all five tabs, actual 384-dimensional multilingual embeddings and three ES→EN translations.
 - [Real historical BBC final-pipeline evaluation workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/rubric-verification.yml) — results pending until successful execution; no raw copyrighted text published.
 
+## Rubric documentation and tutorials
+
+[Detailed 200-point crosswalk](final-newsbot-2.0/docs/CANVAS_VERIFICATION.md) · [Seven tutorial notebooks](final-newsbot-2.0/notebooks/) · [Technical specification](final-newsbot-2.0/docs/technical_documentation.md) · [API reference](final-newsbot-2.0/docs/api_reference.md) · [User guide and FAQ](final-newsbot-2.0/docs/user_guide.md) · [Business case and ROI](final-newsbot-2.0/docs/business_analysis.md) · [15-minute defense](final-newsbot-2.0/docs/ORAL_DEFENSE.md).
+
 ## System architecture
 
 ```mermaid
