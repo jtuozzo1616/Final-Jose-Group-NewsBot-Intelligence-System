@@ -1,0 +1,50 @@
+name: Publish verified final browser evidence
+on:
+  push:
+    paths: ['.github/workflows/publish-final-browser-evidence.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/download-artifact@v4
+        with:
+          name: final-neural-evidence
+          path: final-newsbot-2.0/evidence/
+          run-id: 45691589311
+          github-token: ${{ github.token }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: final-notebook-and-browser
+          path: final-newsbot-2.0/evidence/
+          run-id: 45691589311
+          github-token: ${{ github.token }}
+      - name: Check evidence before publishing
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('final-newsbot-2.0/evidence')
+          result=json.loads((p/'browser_results.json').read_text())
+          assert result['status']=='passed' and len(result['screens'])==7
+          assert list((p/'video').glob('*.webm'))
+          assert json.loads((p/'embedding_results.json').read_text())['dimension']==384
+          assert all(r['status']=='ok' for r in json.loads((p/'translation_results.json').read_text())['translations'])
+          (p/'run_status.json').write_text(json.dumps({'source_commit':'25a3e04037b15d855509dc0d4fce2da28426edd3','run_id':'45691589311','notebook_browser':'success','neural':'success','publication':'recovered from successful job artifacts'},indent=2))
+          PY
+      - name: Commit verified evidence on current main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f final-newsbot-2.0/evidence/
+          git diff --cached --quiet && exit 0
+          git commit -m 'Publish seven real browser captures, video, executed notebook and neural evidence [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
