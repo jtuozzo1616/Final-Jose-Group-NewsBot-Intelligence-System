@@ -1,0 +1,95 @@
+name: NewsBot final evidence - notebook, browser, neural
+on:
+  push:
+    paths:
+      - 'final-newsbot-2.0/Final_NewsBot_2.0.ipynb'
+      - 'final-newsbot-2.0/run_neural_evidence.py'
+      - 'final-newsbot-2.0/run_browser_evidence.py'
+      - 'final-newsbot-2.0/app.py'
+      - 'final-newsbot-2.0/newsbot2/**'
+      - '.github/workflows/newsbot-evidence.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: final-evidence-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  notebook-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: final-newsbot-2.0
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements-dev.txt nbconvert ipykernel playwright
+      - name: Execute final notebook from fresh kernel
+        run: |
+          mkdir -p evidence
+          jupyter nbconvert --to notebook --execute Final_NewsBot_2.0.ipynb --output Final_NewsBot_2.0_Executed.ipynb --output-dir evidence --ExecutePreprocessor.timeout=300
+      - name: Install real Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Browser interaction and capture
+        run: |
+          NEWSBOT_DEMO_ONLY=1 streamlit run app.py --server.headless true --server.address 127.0.0.1 --server.port 8501 > evidence/streamlit.log 2>&1 &
+          python -m playwright --version
+          for i in $(seq 1 90); do curl -fsS http://127.0.0.1:8501/_stcore/health && break; sleep 1; done
+          python run_browser_evidence.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-notebook-and-browser
+          path: final-newsbot-2.0/evidence/
+  neural:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: final-newsbot-2.0
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements-app.txt
+      - run: pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install 'sentence-transformers>=3,<6' 'argostranslate>=1.9,<2'
+      - name: Download real models and evaluate
+        env:
+          TOKENIZERS_PARALLELISM: 'false'
+          OMP_NUM_THREADS: '2'
+        run: python run_neural_evidence.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-neural-evidence
+          path: final-newsbot-2.0/evidence/
+  publish:
+    if: always() && github.ref == 'refs/heads/main' && !cancelled()
+    needs: [notebook-browser, neural]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: final-*-*
+          path: final-newsbot-2.0/evidence/
+          merge-multiple: true
+      - name: Publish evidence without changing code
+        env:
+          CORE_RESULT: ${{ needs.notebook-browser.result }}
+          NEURAL_RESULT: ${{ needs.neural.result }}
+        run: |
+          mkdir -p final-newsbot-2.0/evidence
+          python -c 'import json,os; from pathlib import Path; Path("final-newsbot-2.0/evidence/run_status.json").write_text(json.dumps({"source_commit":os.environ["GITHUB_SHA"],"run_id":os.environ["GITHUB_RUN_ID"],"notebook_browser":os.environ["CORE_RESULT"],"neural":os.environ["NEURAL_RESULT"]},indent=2))'
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f final-newsbot-2.0/evidence/
+          git diff --cached --quiet && exit 0
+          git commit -m "Publish independently executed final evidence [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main

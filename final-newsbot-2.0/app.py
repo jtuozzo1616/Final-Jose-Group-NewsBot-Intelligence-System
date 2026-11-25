@@ -3,7 +3,7 @@ Run: streamlit run app.py. Entire default demo works without API keys.
 """
 from __future__ import annotations
 from collections import Counter
-import io,json,tempfile
+import io,json,tempfile,os
 from pathlib import Path
 import streamlit as st
 import pandas as pd
@@ -32,9 +32,13 @@ div[data-testid="stMetric"] { background:#15273c;border:1px solid #2a475d;paddin
 def get_engine():
     if 'engine' not in st.session_state:
         trusted=next((p for p in (ROOT/'outputs'/'newsbot_classifier.joblib', ROOT.parent/'outputs'/'newsbot_classifier.joblib') if p.is_file()), ROOT/'outputs'/'newsbot_classifier.joblib')
-        if trusted.exists():
-            clf=Classifier.from_trusted_joblib(str(trusted))
-            st.session_state.engine=NewsBotEngine(import_articles(ROOT/'data/demo_news.jsonl'),classifier=clf)
+        if trusted.exists() and os.getenv('NEWSBOT_DEMO_ONLY') != '1':
+            try:
+                clf=Classifier.from_trusted_joblib(str(trusted))
+                st.session_state.engine=NewsBotEngine(import_articles(ROOT/'data/demo_news.jsonl'),classifier=clf)
+            except Exception:
+                st.session_state.engine=NewsBotEngine(import_articles(ROOT/'data/demo_news.jsonl'))
+                st.session_state.engine.train_local_classifier()
         else:
             st.session_state.engine=NewsBotEngine(import_articles(ROOT/'data/demo_news.jsonl'))
             st.session_state.engine.train_local_classifier()
@@ -61,12 +65,23 @@ with st.sidebar:
         except Exception as exc:st.error(str(exc))
     if st.button('Restore synthetic demonstration',use_container_width=True):
         trusted=next((p for p in (ROOT/'outputs'/'newsbot_classifier.joblib', ROOT.parent/'outputs'/'newsbot_classifier.joblib') if p.is_file()), ROOT/'outputs'/'newsbot_classifier.joblib')
-        clf=Classifier.from_trusted_joblib(str(trusted)) if trusted.exists() else None
+        clf=Classifier.from_trusted_joblib(str(trusted)) if trusted.exists() and os.getenv('NEWSBOT_DEMO_ONLY') != '1' else None
         st.session_state.engine=NewsBotEngine(import_articles(ROOT/'data/demo_news.jsonl'),classifier=clf)
         if clf is None:st.session_state.engine.train_local_classifier()
         st.session_state.chat_history=[]
         st.rerun()
     st.divider()
+    if os.getenv('NEWSBOT_ENABLE_NEURAL') == '1':
+        if st.button('Enable multilingual embeddings',use_container_width=True):
+            with st.spinner('Loading opt-in neural model...'):
+                current=st.session_state.engine
+                candidate=NewsBotEngine(current.articles,classifier=current.classifier,embedding_model='sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
+                if candidate.retriever.method.startswith('multilingual-embeddings:'):
+                    st.session_state.engine=candidate
+                    st.session_state.chat_history=[]
+                    st.rerun()
+                else:
+                    st.error('Neural model unavailable. Existing retrieval unchanged.')
     st.caption('No paid API key required · No network fetches · All default articles are fictional.')
     st.warning('This is an editorial research assistant, not a live news feed or fact-checker.',icon='⚠️')
 

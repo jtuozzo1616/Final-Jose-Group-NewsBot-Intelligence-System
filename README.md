@@ -23,6 +23,14 @@ An evidence-first, local-first news intelligence workspace that extends the hist
 
 The reflection is the November 25 student-supplied version, not the earlier draft. The repository PDFs and PowerPoint are reconstructed reading copies of the submitted document content; the original Canvas files can be uploaded separately. See the [submission index](final-newsbot-2.0/submission/README.md) for provenance.
 
+## Final execution evidence
+
+- [Final executable notebook](final-newsbot-2.0/Final_NewsBot_2.0.ipynb) — [open in Colab](https://colab.research.google.com/github/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/blob/main/final-newsbot-2.0/Final_NewsBot_2.0.ipynb) after installing the project dependencies and cloning the repository.
+- [Latest evidence workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/newsbot-evidence.yml) — executes the notebook, real Chromium interactions and neural-model tests. Results must be checked before claiming success.
+- [Deployment instructions](final-newsbot-2.0/docs/DEPLOYMENT.md) — requires hosting-account authorization; public URL pending verification.
+- [Oral defense and live demonstration guide](final-newsbot-2.0/docs/ORAL_DEFENSE.md).
+- [Detailed Canvas verification status](final-newsbot-2.0/docs/CANVAS_VERIFICATION.md).
+
 ## System architecture
 
 ```mermaid

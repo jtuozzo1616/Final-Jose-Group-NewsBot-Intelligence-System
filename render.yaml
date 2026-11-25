@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: newsbot-intelligence-2
+    runtime: docker
+    plan: free
+    rootDir: final-newsbot-2.0
+    dockerfilePath: ./Dockerfile.web
+    healthCheckPath: /_stcore/health
+    autoDeployTrigger: commit
