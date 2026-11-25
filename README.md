@@ -31,6 +31,12 @@ The reflection is the November 25 student-supplied version, not the earlier draf
 - [Oral defense and live demonstration guide](final-newsbot-2.0/docs/ORAL_DEFENSE.md).
 - [Detailed Canvas verification status](final-newsbot-2.0/docs/CANVAS_VERIFICATION.md).
 
+## Detailed rubric alignment (November 25)
+
+- [Advanced analytics: LDA and NMF, clustering, temporal sentiment, co-mentions and structured queries](final-newsbot-2.0/newsbot2/advanced.py).
+- [Executed notebook and browser evidence](final-newsbot-2.0/evidence/) — prior run verified all five tabs, actual 384-dimensional multilingual embeddings and three ES→EN translations.
+- [Real historical BBC final-pipeline evaluation workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/rubric-verification.yml) — results pending until successful execution; no raw copyrighted text published.
+
 ## System architecture
 
 ```mermaid

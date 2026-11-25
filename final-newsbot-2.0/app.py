@@ -10,6 +10,7 @@ import pandas as pd
 from newsbot2.engine import NewsBotEngine
 from newsbot2.analysis import Classifier
 from newsbot2.io import import_articles
+from newsbot2.advanced import discover_topics,sentiment_timeline,entity_network,language_comparison,structured_query,expand_query,hierarchy,export_report
 
 st.set_page_config(page_title='NewsBot Intelligence · 2.0',page_icon='🗞️',layout='wide',
                    initial_sidebar_state='expanded')
@@ -133,6 +134,7 @@ with tabs[1]:
             st.caption(f"Method: {doc['summary']['method']} · Sentence positions: {doc['summary']['selected_sentence_indices']}")
             st.markdown('**Category classifier**')
             st.json(doc['classification'])
+            st.json(hierarchy(doc['classification']))
         with right:
             st.markdown('**Sentiment / language hint**')
             st.json({'sentiment':doc['sentiment'],'language':doc['language']})
@@ -151,13 +153,18 @@ with tabs[2]:
     st.caption('EN / ES / FR / DE keyword-pivot fallback. Optional multilingual sentence embeddings enable true semantic retrieval.')
     query=st.text_input('What are you researching?',value='investigación de inteligencia artificial')
     language_filter=st.selectbox('Source language', ['All','en','es','fr','de','und'])
-    results=eng.search(query,k=6,language=None if language_filter=='All' else language_filter)
+    expand=st.checkbox('Expand query with domain terms',value=False)
+    if expand: st.json(expand_query(query))
+    results=eng.search(expand_query(query)['expanded'] if expand else query,k=6,language=None if language_filter=='All' else language_filter)
     if not results:st.warning('No relevant articles found. Try a term present in the corpus.')
     for hit in results:
         with st.container(border=True):
             st.markdown(f"**{hit['title']}**  ·  `{hit['article_id']}`")
             st.write(hit['excerpt'])
             st.caption(f"{hit['source']} | method: {hit['retrieval_method']} | similarity: {hit['score']:.3f} (not probability)")
+    with st.expander('Compare language coverage and source context'):
+        st.dataframe(pd.DataFrame(language_comparison(eng.articles)),hide_index=True)
+        st.caption('Language does not establish regional viewpoint; compare actual source context and editorial framing manually.')
     st.divider()
     st.markdown('**Optional fully offline machine translation**')
     src=st.selectbox('From',['es','en','fr','de'],index=0)
@@ -184,6 +191,14 @@ with tabs[3]:
         with st.chat_message('assistant'):
             st.write(reply['answer'])
             if reply['citations']:st.caption('Sources: '+', '.join('['+s['article_id']+']' for s in reply['citations']))
+    with st.expander('Structured questions, preferences and report export'):
+        pref=st.multiselect('Preferred categories',sorted({a.category for a in eng.articles if a.category}))
+        sq=st.text_input('Editorial question',value='Compare tech topics across languages')
+        if st.button('Run structured query'):
+            st.session_state.structured=structured_query(eng,sq,preferred_categories=pref)
+        if 'structured' in st.session_state:
+            st.json(st.session_state.structured)
+            st.download_button('Download query report',export_report(st.session_state.structured),'newsbot_report.json','application/json')
     if st.button('Clear conversation',key='clear_chat'):
         st.session_state.chat_history=[]
         eng.chat.history=[]
@@ -210,3 +225,29 @@ with tabs[4]:
     if st.button('Train a LOCAL demonstration classifier'):
         st.json(eng.train_local_classifier())
         st.caption('Train on your approved dataset for a meaningful evaluation. This button does not create a holdout score.')
+
+    with st.expander('Advanced topic discovery — LDA and NMF, clusters and trends'):
+        method=st.selectbox('Topic algorithm',['lda','nmf'])
+        result=discover_topics(eng.articles,5,method)
+        if result['status']=='ok':
+            st.dataframe(pd.DataFrame(result['topics']))
+            st.dataframe(pd.DataFrame(result['documents'])[['article_id','topic_id','cluster_id','month']])
+            if result['evolution']:
+                rows=[{'month':r['month'],**{f'Topic {i}':w for i,w in enumerate(r['mean_topic_weights'])}} for r in result['evolution']]
+                st.line_chart(pd.DataFrame(rows).set_index('month'))
+            st.caption(result['trend_status']+' — '+result['warning'])
+        else:st.json(result)
+        st.download_button('Export topic analysis',export_report(result),'topics.json','application/json')
+    with st.expander('Sentiment evolution and entity relationships'):
+        timeline=sentiment_timeline(eng.articles)
+        st.dataframe(pd.DataFrame(timeline['rows']))
+        st.caption(timeline['warning'])
+        edges=entity_network(eng.articles)
+        st.dataframe(pd.DataFrame(edges))
+        st.caption('Co-mentions are textual associations, not evidence of real relationships.')
+    with st.expander('Batch article processing'):
+        chosen=st.multiselect('Articles to analyze',list(eng.by_id),max_selections=20)
+        if st.button('Analyze selected articles'):
+            st.session_state.batch=[eng.analyze(i) for i in chosen]
+        if 'batch' in st.session_state:
+            st.download_button('Export batch report',export_report(st.session_state.batch),'batch.json','application/json')

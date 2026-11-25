@@ -44,3 +44,25 @@ def chat(req:QueryRequest):
 
 @app.get('/topics')
 def topics(n:int=Query(4,ge=2,le=8)): return engine().topics(n)
+
+@app.get('/advanced/topics')
+def advanced_topics(method:str=Query('lda',pattern='^(lda|nmf)$'),n:int=Query(4,ge=2,le=8)):
+    from .advanced import discover_topics
+    return discover_topics(engine().articles,n,method)
+@app.get('/advanced/sentiment')
+def advanced_sentiment():
+    from .advanced import sentiment_timeline
+    return sentiment_timeline(engine().articles)
+@app.get('/advanced/entities')
+def advanced_entities():
+    from .advanced import entity_network
+    return entity_network(engine().articles)
+@app.get('/advanced/languages')
+def advanced_languages():
+    from .advanced import language_comparison
+    return language_comparison(engine().articles)
+@app.post('/advanced/query')
+def advanced_query(req:QueryRequest):
+    from .advanced import structured_query
+    # A fresh engine prevents sharing conversational state across clients.
+    return structured_query(NewsBotEngine(engine().articles),req.query)
