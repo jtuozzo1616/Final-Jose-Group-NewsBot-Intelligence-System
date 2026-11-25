@@ -17,3 +17,6 @@ The November 25 student-provided journal replaces the earlier draft. The PDF her
 ## Original-file integrity
 
 The [SHA-256 manifest](ORIGINAL_SHA256SUMS.txt) records the five original Canvas files, including the byte-identical student journal. The originals are not yet uploaded; the current repository copies are explicitly labeled as reconstructed. To replace them, extract the original deliverables ZIP supplied separately and upload its five files to [this directory](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/upload/main/final-newsbot-2.0/submission). Then verify with `sha256sum -c ORIGINAL_SHA256SUMS.txt` (or `shasum -a 256 -c ORIGINAL_SHA256SUMS.txt` on macOS) and update the provenance note only when all checks pass.
+
+## Detailed rubric revision
+The new generator creates a technical report, executive brief with ROI and competition, 18-slide PowerPoint with speaker notes, and 3-page condensed reflection draft. The five-page reading copy remains archived. Original-file checksums refer to the **previous** Canvas package, not the revised deliverables. Check the [generation workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/rubric-deliverables.yml) before using the revised files. Student review and actual contribution confirmation remain required.

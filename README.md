@@ -14,14 +14,14 @@ An evidence-first, local-first news intelligence workspace that extends the hist
 |---|---|
 | Technical documentation | [PDF — technical report](final-newsbot-2.0/submission/FP_TechnicalDoc_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf) |
 | Executive summary | [PDF — executive summary](final-newsbot-2.0/submission/FP_ExecutiveSummary_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf) |
-| Final presentation | [PowerPoint — 11 slides](final-newsbot-2.0/submission/FP_Presentation_JoseMiguelTuozzo_JoseGroup_ITAI2373.pptx) |
-| Reflective journal | [PDF — student-supplied text, repository reading copy](final-newsbot-2.0/submission/FP_ReflectiveJournal_JoseGroup_ITAI2373.pdf) |
+| Final presentation | [PowerPoint — updated rubric edition (18 slides after verified generation)](final-newsbot-2.0/submission/FP_Presentation_JoseMiguelTuozzo_JoseGroup_ITAI2373.pptx) |
+| Reflective journal | [PDF — 3-page rubric reading draft after verified generation](final-newsbot-2.0/submission/FP_ReflectiveJournal_JoseGroup_ITAI2373.pdf) |
 | GitHub submission links | [PDF](final-newsbot-2.0/submission/FP_GitHub_Links_ITAI2373.pdf) |
 | Rubric and evidence | [Final submission review](final-newsbot-2.0/docs/FINAL_SUBMISSION_REVIEW.md) |
 | Reproduce the system | [Quick start](final-newsbot-2.0/README.md) · [Verified CI run](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/runs/45680349376) |
 | Research artifacts | [Results](final-newsbot-2.0/artifacts/) · [Research code](final-newsbot-2.0/run_research.py) |
 
-The reflection is the November 25 student-supplied version, not the earlier draft. The repository PDFs and PowerPoint are reconstructed reading copies of the submitted document content; the original Canvas files can be uploaded separately. See the [submission index](final-newsbot-2.0/submission/README.md) for provenance.
+The detailed rubric requires 15–20 slides with notes and a three-page reflection. The new deliverables are generated and verified by the [rubric document workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/rubric-deliverables.yml). The student should personally approve the condensed journal; the original five-page reading copy is preserved. See the submission index for provenance.
 
 ## Final execution evidence
 
