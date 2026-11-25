@@ -10,12 +10,14 @@ An evidence-first, local-first news intelligence workspace that extends the hist
 
 ## Instructor review — start here
 
+**Required individual portfolio:** [ITAI2373-NewsBot-Final](https://github.com/jtuozzo1616/Jose-Tuozzo-AI-Portfolio/tree/main/ITAI2373-NewsBot-Final). This repository is the canonical implementation. The portfolio contains a full snapshot with source revision recorded.
+
 | Deliverable | Open directly |
 |---|---|
 | Technical documentation | [PDF — technical report](final-newsbot-2.0/submission/FP_TechnicalDoc_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf) |
 | Executive summary | [PDF — executive summary](final-newsbot-2.0/submission/FP_ExecutiveSummary_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf) |
-| Final presentation | [PowerPoint — updated rubric edition (18 slides after verified generation)](final-newsbot-2.0/submission/FP_Presentation_JoseMiguelTuozzo_JoseGroup_ITAI2373.pptx) |
-| Reflective journal | [PDF — 3-page rubric reading draft after verified generation](final-newsbot-2.0/submission/FP_ReflectiveJournal_JoseGroup_ITAI2373.pdf) |
+| Final presentation | [PowerPoint — 18 slides with speaker notes](final-newsbot-2.0/submission/FP_Presentation_JoseMiguelTuozzo_JoseGroup_ITAI2373.pptx) |
+| Reflective journal | [PDF — 3-page condensed reflection (review required)](final-newsbot-2.0/submission/FP_ReflectiveJournal_JoseGroup_ITAI2373.pdf) |
 | GitHub submission links | [PDF](final-newsbot-2.0/submission/FP_GitHub_Links_ITAI2373.pdf) |
 | Rubric and evidence | [Final submission review](final-newsbot-2.0/docs/FINAL_SUBMISSION_REVIEW.md) |
 | Reproduce the system | [Quick start](final-newsbot-2.0/README.md) · [Verified CI run](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/runs/45680349376) |
@@ -42,6 +44,11 @@ The detailed rubric requires 15–20 slides with notes and a three-page reflecti
 [Detailed 200-point crosswalk](final-newsbot-2.0/docs/CANVAS_VERIFICATION.md) · [Seven tutorial notebooks](final-newsbot-2.0/notebooks/) · [Technical specification](final-newsbot-2.0/docs/technical_documentation.md) · [API reference](final-newsbot-2.0/docs/api_reference.md) · [User guide and FAQ](final-newsbot-2.0/docs/user_guide.md) · [Business case and ROI](final-newsbot-2.0/docs/business_analysis.md) · [15-minute defense](final-newsbot-2.0/docs/ORAL_DEFENSE.md).
 
 ## New real-data and model evidence
+
+- [Verified FLAN-T5 generation](final-newsbot-2.0/evidence/generation_results.json): three actual pretrained editorial drafts; not independently rated for factuality.
+- [Verified ES→EN translation](final-newsbot-2.0/evidence/translation_results.json) and [384-dimensional MiniLM embedding experiment](final-newsbot-2.0/evidence/embedding_results.json).
+- [Latest 33-test run](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/runs/45691589132) and [seven executed tutorials](final-newsbot-2.0/evidence/tutorials/).
+
 
 - [Real historical BBC evaluation, final pipeline](final-newsbot-2.0/evidence/real_bbc_final_evaluation.json): 250 balanced historical articles, 3-fold CV accuracy 90.8%, macro-F1 0.9079; LDA and NMF also fitted. No raw copyrighted texts published.
 - [Opt-in pretrained FLAN-T5 generation](final-newsbot-2.0/newsbot2/generation.py), [inference workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/newsbot-generation.yml). Neural drafts require human verification; the actual run must pass before claiming evidence.
@@ -73,7 +80,7 @@ flowchart LR
 
 | Evaluation | Result | Scope |
 |---|---:|---|
-| Final automated tests | **27 passed** | Offline core and API regression tests |
+| Final automated tests | **33 passed** | Offline core, API, advanced topic and contextual-analysis regression tests |
 | Word baseline macro-F1 | 0.5371 | 30 fictional records, same stratified folds |
 | Pivot word macro-F1 | 0.5720 | Same controlled experiment |
 | Pivot + character macro-F1 | **0.6143** | +0.0772 absolute F1 vs baseline |
