@@ -11,3 +11,7 @@ The Streamlit application is ready for a free Community Cloud deployment. Accoun
 For a free Render alternative, the root render.yaml defines a Docker service, with health check at /_stcore/health. Authorize the repo and approve the free service before deployment. The default public instance deliberately uses the lightweight local classifier rather than downloading neural models. No paid API is required.
 
 The neural option is documented separately and should be demonstrated locally or using the actual CI evidence, not advertised as active in the lightweight hosted demo.
+
+## Student deployment URL
+https://final-jose-group-newsbot-intelligence-system-al984gd7vc9uzqmek.streamlit.app/
+The student demonstrated the hosted UI. Independent public access and the latest document-import deployment must still be checked. Hosted file processing occurs on the server.

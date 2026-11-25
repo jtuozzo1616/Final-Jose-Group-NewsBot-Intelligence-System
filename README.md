@@ -10,6 +10,8 @@ An evidence-first, local-first news intelligence workspace that extends the hist
 
 ## Instructor review — start here
 
+**[Streamlit application](https://final-jose-group-newsbot-intelligence-system-al984gd7vc9uzqmek.streamlit.app/)** — deployment URL supplied by the student; independent public-access verification is still pending. Supports multiple documents (PDF, DOCX, TXT, Markdown, HTML, CSV, JSON and JSONL) after the latest code redeploy. See the user guide for limits.
+
 [Google Colab execution verification](final-newsbot-2.0/evidence/COLAB_VERIFICATION.md): student-supplied integrated notebook passed all eight sections and 33 tests, with saved outputs. The original executed notebook upload and exact public Streamlit URL remain to be confirmed.
 
 **Required individual portfolio:** [ITAI2373-NewsBot-Final](https://github.com/jtuozzo1616/Jose-Tuozzo-AI-Portfolio/tree/main/ITAI2373-NewsBot-Final). This repository is the canonical implementation. The portfolio contains a full snapshot with source revision recorded.
