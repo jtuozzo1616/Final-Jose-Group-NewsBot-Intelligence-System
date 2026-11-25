@@ -1,0 +1,78 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [7 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 4721 >>
+stream
+0.04 0.25 0.33 rg 0 740 612 52 re f
+1 1 1 rg BT /F2 12 Tf 1 0 0 1 48 765 Tm (NEWSBOT INTELLIGENCE SYSTEM 2.0  /  ITAI 2373) Tj ET
+0.81 0.92 0.94 rg BT /F1 9 Tf 1 0 0 1 48 750 Tm (Executive summary) Tj ET
+0.09 0.60 0.59 rg 48 725 516 3 re f
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 708 Tm (Executive summary) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 694.4 Tm (Jos\351 Miguel Tuozzo Izaguirre | NewsBot Intelligence System 2.0) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 667.1999999999999 Tm (November 2026 \225 Group filename label: JoseGroup \(provisional\)) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 639.9999999999999 Tm (Problem and solution) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 626.3999999999999 Tm (News analysts need to discover and compare evidence without treating model-generated language) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 612.7999999999998 Tm (as fact. NewsBot 2.0 extends the midterm classifier into an explainable, multilingual research) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 599.1999999999998 Tm (workspace with local-first execution, traceable summaries and conversational access to source) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 585.5999999999998 Tm (passages.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 558.3999999999997 Tm (Capability                      Value) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 531.1999999999997 Tm (Advanced analysis               Classification, NMF topics, sentiment and entity candidates.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 503.99999999999966 Tm (Understanding and               Extractive summaries, search and editorial headline templates.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 490.39999999999964 Tm (generation) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 463.1999999999996 Tm (Multilingual                    Four-language hints, constrained cross-language pivot and optional) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 449.59999999999957 Tm (offline) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 435.99999999999955 Tm (translation.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 408.7999999999995 Tm (Conversation                    Source citations, bounded follow-ups and explicit abstention.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 381.59999999999945 Tm (Bonus research and web          Streamlit frontend, retrieval ablation, paired feature and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 367.99999999999943 Tm (language-shift experiments.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 340.7999999999994 Tm (Evidence and impact) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 327.19999999999936 Tm (The historical midterm achieved 96.18% BBC holdout accuracy and 0.9605 macro-F1. Separately,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 313.59999999999934 Tm (the 30 fictional 2.0 examples achieved 56.67% synthetic CV accuracy and 0.5371 macro-F1;) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 299.9999999999993 Tm (controlled retrieval MRR@3 improved from 0.625 without pivot to 1.000 with pivot on 24 selected) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 286.3999999999993 Tm (probes. These experiments do not establish real-world performance. The updated CI passed 27 tests) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 272.7999999999993 Tm (and both research scripts. Paired synthetic CV macro-F1 increased from 0.5371 \(baseline\) to 0.5720) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 259.19999999999925 Tm (\(pivot\) and 0.6143 \(pivot + character features\).) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 231.99999999999926 Tm (Next decision) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 218.39999999999927 Tm (Use the prototype for educational exploration and portfolio demonstration, not automated) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 204.79999999999927 Tm (publishing.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 191.19999999999928 Tm (Prioritize external multilingual evaluation, calibrated abstention, translation verification and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 177.59999999999928 Tm (deployment security. Open final repository.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 150.3999999999993 Tm (Executive summary | NewsBot 2.0                                                                   ) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 136.7999999999993 Tm (1) Tj ET
+0.80 0.84 0.86 RG 48 36 m 564 36 l S
+0.35 0.42 0.48 rg BT /F1 8 Tf 1 0 0 1 48 22 Tm (Houston Community College  |  Final capstone  |  November 2026) Tj ET
+0.35 0.42 0.48 rg BT /F2 8 Tf 1 0 0 1 535 22 Tm (1/1) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000212 00000 n 
+0000000314 00000 n 
+0000000409 00000 n 
+0000005181 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+5327
+%%EOF

@@ -1,99 +1,85 @@
-# NewsBot Intelligence System
+# NewsBot Intelligence System 2.0
 
-## Final capstone — NewsBot 2.0
+**Final Capstone · ITAI 2373 · Natural Language Processing · Houston Community College**
 
-**Start here for the December 2026 final project:** [NewsBot 2.0 implementation](final-newsbot-2.0/README.md) · [Final review and verified results](final-newsbot-2.0/docs/FINAL_SUBMISSION_REVIEW.md) · [Successful final CI (27 tests)](https://github.com/jtuozzo1616/Mid-Term-Jose-Group-NewsBot-Intelligence-System/actions/runs/45679903622). The original midterm and historical BBC evaluation are preserved below.
+**José Miguel Tuozzo Izaguirre | JoseGroup | November 2026**
 
-**ITAI 2373 — Natural Language Processing | Midterm Project**
+[![Final CI](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/newsbot2-final.yml/badge.svg)](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/newsbot2-final.yml)
 
-**José Miguel Tuozzo Izaguirre**  
-[Open in Google Colab](https://colab.research.google.com/github/jtuozzo1616/Mid-Term-Jose-Group-NewsBot-Intelligence-System/blob/main/RUN_NEWSBOT_IN_COLAB.ipynb) · [Course portfolio](https://github.com/jtuozzo1616/Jose-Tuozzo-AI-Portfolio/tree/main/ITAI2373-NewsBot-Midterm) · [Verified execution](https://github.com/jtuozzo1616/Mid-Term-Jose-Group-NewsBot-Intelligence-System/actions/runs/38775732890)
+An evidence-first, local-first news intelligence workspace that extends the historical BBC midterm classifier into a modular NLP platform. It supports article analysis, extractive summarization, multilingual retrieval, cited conversational exploration, and an interactive web interface without a paid API.
 
-NewsBot studies historical BBC news and brings eight natural language processing techniques into a single article-analysis pipeline. It sorts articles into editorial topics, examines language and sentiment, and extracts named entities. The intended use is to **assist** human editors and media researchers—not publish stories automatically or verify facts.
+## Instructor review — start here
 
-## Start here
-
-| I want to… | Open |
+| Deliverable | Open directly |
 |---|---|
-| **Run the full project** | [One-click Google Colab notebook](RUN_NEWSBOT_IN_COLAB.ipynb) |
-| **Review all eight modules** | [Clean, runnable notebook](Midterm_NewsBot_Intelligence_System.ipynb) |
-| **See every executed cell and its results** | **[Completed notebook with outputs](docs/NewsBot_Executed_Results.ipynb)** — permanent, no artifact download needed |
-| **Verify independent execution** | [Successful GitHub Actions run](https://github.com/jtuozzo1616/Mid-Term-Jose-Group-NewsBot-Intelligence-System/actions/runs/38778575638) |
-| **See the figures immediately** | [Eight charts and evaluation tables](outputs/) |
-| **Read the research report** | [Technical PDF](docs/MT_Report_Group_Solo_Jose_Miguel_Tuozzo_Izaguirre_ITAI2373.pdf) |
-| **Read the personal reflection** | [Two-page PDF](docs/NewsBot_Reflection_Solo.pdf) · [First-person reading copy](docs/Personal_Reflection_Reading_Copy.md) |
-| **Follow a short review route** | [Professor's review guide](docs/PROFESSOR_REVIEW_GUIDE.md) |
-| **Explore the optional interface** | [Streamlit dashboard source](dashboard.py) |
+| Technical documentation | [PDF — technical report](final-newsbot-2.0/submission/FP_TechnicalDoc_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf) |
+| Executive summary | [PDF — executive summary](final-newsbot-2.0/submission/FP_ExecutiveSummary_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf) |
+| Final presentation | [PowerPoint — 11 slides](final-newsbot-2.0/submission/FP_Presentation_JoseMiguelTuozzo_JoseGroup_ITAI2373.pptx) |
+| Reflective journal | [PDF — student-supplied text, repository reading copy](final-newsbot-2.0/submission/FP_ReflectiveJournal_JoseGroup_ITAI2373.pdf) |
+| GitHub submission links | [PDF](final-newsbot-2.0/submission/FP_GitHub_Links_ITAI2373.pdf) |
+| Rubric and evidence | [Final submission review](final-newsbot-2.0/docs/FINAL_SUBMISSION_REVIEW.md) |
+| Reproduce the system | [Quick start](final-newsbot-2.0/README.md) · [Verified CI run](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/runs/45680349376) |
+| Research artifacts | [Results](final-newsbot-2.0/artifacts/) · [Research code](final-newsbot-2.0/run_research.py) |
 
-Choose the [clean notebook](Midterm_NewsBot_Intelligence_System.ipynb) to run the project again, or the **[executed evidence notebook](docs/NewsBot_Executed_Results.ipynb)** to inspect all saved cell outputs immediately. Both are permanently available in this repository and mirrored in the [course portfolio](https://github.com/jtuozzo1616/Jose-Tuozzo-AI-Portfolio/tree/main/ITAI2373-NewsBot-Midterm).
+The reflection is the November 25 student-supplied version, not the earlier draft. The repository PDFs and PowerPoint are reconstructed reading copies of the submitted document content; the original Canvas files can be uploaded separately. See the [submission index](final-newsbot-2.0/submission/README.md) for provenance.
 
-## What the experiment found
+## System architecture
 
-The labeled BBC training file contains 1,490 articles from five categories: **business, entertainment, politics, sport and tech**. After removing 50 exact-text duplicates, the experiment used 1,440 articles: 1,152 for training and 288 for the final, untouched test set.
-
-| Measure | Result |
-|---|---:|
-| Selected model | Linear SVM, TF-IDF unigrams + bigrams |
-| Tuned five-fold training CV macro-F1 | **0.9801** |
-| Holdout accuracy | **96.18%** — 277 of 288 articles |
-| Holdout macro-F1 | **0.9605** |
-| Most reliable class by test F1 | sport — 0.9784 |
-| Class needing the most attention by test F1 | entertainment — 0.9515 |
-
-The strongest signal is that a simple TF-IDF/SVM pipeline can organize articles effectively **within this historical BBC dataset**. However, the **11 holdout errors** have an interpretable pattern: game-sector financial news sometimes became *business*, and entertainment stories involving digital media sometimes became *tech*. Four entertainment articles were missed, while three non-sport articles were mistakenly sent to sport despite **100% sport recall**. The proposed editorial safeguard is human review for overlapping topics, not automatic reassignment.
-
-**[Read the evidence-based analysis of all 11 mistakes](docs/HOLDOUT_ERROR_CASE_STUDY.md)** · [Verified aggregate error directions](outputs/error_directions.csv) · [Confusion matrix](outputs/06_confusion_matrix.png)
-
-![Actual 288-article BBC holdout confusion matrix](outputs/06_confusion_matrix.png)
-
-[Model comparison](outputs/05_model_cv_comparison.png) · [Per-class evaluation](outputs/per_class_metrics.csv) · [Experiment manifest](outputs/run_manifest.json) · [Detailed findings](docs/Technical_Results_Summary.md)
-
-These are results from a completed BBC-data run, not the synthetic articles used in software tests. The [execution record](docs/RUN_STATUS.md) explains the dataset origin, software versions and evidence.
-
-## The eight NLP modules
-
-| Module | Focus | Main evidence |
-|---|---|---|
-| **1. Data acquisition and business context** | Source, labels, cleaning and topic distribution | [Data distribution](outputs/01_data_distribution.png) |
-| **2. Text preprocessing** | Normalize HTML, URLs and whitespace; preserve useful terms | [Notebook](Midterm_NewsBot_Intelligence_System.ipynb) |
-| **3. TF-IDF** | Compare discriminative words across topics | [Term profiles](outputs/02_tfidf_category_terms.png) |
-| **4. POS tagging** | Compare grammatical patterns using spaCy | [Linguistic patterns](outputs/03_linguistic_sentiment.png) |
-| **5. Syntax and semantics** | Dependency parsing and approximate subject–verb–object patterns | [Notebook](Midterm_NewsBot_Intelligence_System.ipynb) |
-| **6. Sentiment and emotion** | VADER polarity and a small illustrative emotion lexicon | [Sentiment analysis](outputs/03_linguistic_sentiment.png) |
-| **7. Classification** | Compare four classifiers; tune and test the best model | [Models](outputs/05_model_cv_comparison.png) · [Confusion matrix](outputs/06_confusion_matrix.png) |
-| **8. Named entity recognition** | Extract people, organizations, places, dates and money | [NER results](outputs/04_ner_analysis.png) |
-
-The notebook also runs fictional technology, sports and politics articles through the integrated analysis class, and tests the trained classifier against light spelling perturbations. The demo articles are examples of system behavior, not labeled test evidence.
-
-## Reproduce it
-
-1. Open the [Colab launcher](https://colab.research.google.com/github/jtuozzo1616/Mid-Term-Jose-Group-NewsBot-Intelligence-System/blob/main/RUN_NEWSBOT_IN_COLAB.ipynb) and select **Runtime → Run all**. It downloads this repository, installs dependencies and loads the historical BBC training data from the documented research mirror if a local CSV has not been supplied.
-2. Allow time for spaCy parsing and model selection. The runner generates the eight charts, CSV/JSON metrics, PDFs and an executed notebook.
-3. Read the final verification result and download the generated evidence archive. The original BBC article texts are **not** included in this public GitHub repository.
-
-To run from a terminal after cloning:
-
-```bash
-python -m pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-python run_all_and_package.py --github "https://github.com/jtuozzo1616/Mid-Term-Jose-Group-NewsBot-Intelligence-System"
-python verify_release.py
+```mermaid
+flowchart LR
+ A[CSV or JSONL] --> B[Validation and provenance]
+ B --> C[Content analysis]
+ B --> D[Multilingual retrieval]
+ C --> E[Shared engine]
+ D --> E
+ E --> F[Cited conversation]
+ E --> G[Streamlit / API / CLI]
+ F --> G
 ```
 
-To try the optional Streamlit interface with the published model:
+| Required capability | Main implementation |
+|---|---|
+| Advanced analysis | [Classification, NMF topics, sentiment, entities](final-newsbot-2.0/newsbot2/analysis.py) |
+| Understanding and generation | [Extractive MMR summaries](final-newsbot-2.0/newsbot2/analysis.py), [ranked search and relevant source windows](final-newsbot-2.0/newsbot2/retrieval.py) |
+| Multilingual intelligence | [Language detection, lexical pivot, optional Argos translation](final-newsbot-2.0/newsbot2/language.py); optional multilingual embeddings |
+| Conversational interface | [Grounded chat, citations, follow-up, abstention](final-newsbot-2.0/newsbot2/chat.py) |
+| Web frontend bonus | [Five-tab Streamlit application](final-newsbot-2.0/app.py) |
+| Research bonus | [Controlled retrieval and classification experiments](final-newsbot-2.0/run_research.py), [paired ablation and language holdout](final-newsbot-2.0/run_robustness.py) |
+
+## Verified experimental evidence
+
+| Evaluation | Result | Scope |
+|---|---:|---|
+| Final automated tests | **27 passed** | Offline core and API regression tests |
+| Word baseline macro-F1 | 0.5371 | 30 fictional records, same stratified folds |
+| Pivot word macro-F1 | 0.5720 | Same controlled experiment |
+| Pivot + character macro-F1 | **0.6143** | +0.0772 absolute F1 vs baseline |
+| Retrieval MRR@3 | **1.000 vs 0.625** | 24 selected fictional probes, with vs without pivot |
+| Historical BBC holdout | **96.18% accuracy / 0.9605 macro-F1** | 288 historical articles; midterm only |
+
+[Verified CI](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/runs/45679903622) · [Permanent verified summary](final-newsbot-2.0/artifacts/verified_final_summary.json) · [Evaluation methodology and limits](final-newsbot-2.0/docs/ARCHITECTURE_AND_LIMITS.md).
+
+The synthetic results are controlled functional experiments, not real-world accuracy. The retrieval probes were constructed with knowledge of the corpus. Translation and learned multilingual embeddings require installed model assets; the default system uses transparent CPU fallbacks. This is a capstone prototype, not a deployed or independently validated newsroom product.
+
+## Quick demonstration
 
 ```bash
-python -m pip install -r requirements-dashboard.txt
-python -m spacy download en_core_web_sm
-streamlit run dashboard.py
+git clone https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System.git
+cd Final-Jose-Group-NewsBot-Intelligence-System/final-newsbot-2.0
+python -m pip install -r requirements-dev.txt
+python -m pytest tests -q
+python run_research.py
+streamlit run app.py
 ```
 
-The dashboard is provided as runnable source code, not as a hosted website. Load the serialized model only from a source you trust.
+Open the local Streamlit URL printed in the terminal. Explore **Command Center**, **Article Lab**, **Search & Languages**, **Grounded Chat**, and **Research Lab**. See the [quick start](final-newsbot-2.0/README.md) for command-line and API examples.
 
-## Interpretation and limits
+## Repository map
 
-BBC articles here are from **2004–2005** and represent one news publisher. Performance on present-day articles, other publishers or languages has not been measured. VADER describes lexical tone, not truth or the writer's views. Entity co-mentions do not establish real-world relationships, and SVM decision scores have not been calibrated as probabilities.
+- [final-newsbot-2.0/](final-newsbot-2.0/) — final source, tests, data, experiments and current deliverables.
+- [submission/](final-newsbot-2.0/submission/) — single authoritative reviewer-facing document index.
+- [Historical midterm](MIDTERM.md) — eight original NLP modules and verified BBC evidence (preserved for continuity).
+- [Original executed notebook](docs/NewsBot_Executed_Results.ipynb) and [historical outputs](outputs/) — prior independent evaluation, not final scores.
+- [Contribution record](final-newsbot-2.0/docs/CONTRIBUTIONS.md) — student-supplied reflection and evidence boundaries.
 
-The [research notes](docs/RESEARCH_EVIDENCE.md), [technical summary](docs/Technical_Results_Summary.md) and [course review guide](docs/PROFESSOR_REVIEW_GUIDE.md) provide further methodology and limitations. The selected dataset originates from the [BBC News Classification Kaggle competition](https://www.kaggle.com/competitions/learn-ai-bbc/data); the source file is fingerprinted in the manifest.
-
-**Course submission:** This repository lists José Miguel Tuozzo Izaguirre as the project student, and the course-named [portfolio folder](https://github.com/jtuozzo1616/Jose-Tuozzo-AI-Portfolio/tree/main/ITAI2373-NewsBot-Midterm) contains the assignment entry. The instructor's approval of the Kaggle dataset and individual submission arrangement has not been independently verified. The reflective journal should be checked against personal experience before submission. A video guide is [available here](docs/Video_Demo_6_Minute_Script.md); a recording link will be added when provided.
+The grade and bonus awards remain the instructor's decision. The two separately specified Canvas instruction downloads were not provided; the review map follows the available assignment overview.

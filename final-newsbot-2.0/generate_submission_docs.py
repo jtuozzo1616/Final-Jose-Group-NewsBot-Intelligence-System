@@ -1,6 +1,4 @@
-"""Create instructor-friendly PDF documents from verified release results.
-This generator is included for reproducibility; PDFs use provisional group naming.
-"""
+"""Historical document-generation source. Writes only to generated_legacy/; never overwrites final submission files. The student-supplied journal is in submission/."""
 from __future__ import annotations
 from datetime import date
 import json,math
@@ -18,7 +16,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 ROOT=Path(__file__).resolve().parent
-DOC=ROOT/'docs';DOC.mkdir(exist_ok=True)
+DOC=ROOT/'generated_legacy';DOC.mkdir(exist_ok=True)
 ART=ROOT/'artifacts'
 results=json.loads((ART/'research_results.json').read_text())
 metrics=results['synthetic_classification_cv']
@@ -193,7 +191,7 @@ bullet('Collect independently rated sentiment, NER, extractive summary and answe
 bullet('Add calibrated classification scores, explicit abstention calibration, out-of-distribution checks and human-review measurements.'),
 bullet('Deploy a staged service with authentication, resource limits, observability, privacy policy and a genuine newsroom pilot.'),
 P('References / implementation notes','h1'),
-P('Original midterm repository: https://github.com/jtuozzo1616/Mid-Term-Jose-Group-NewsBot-Intelligence-System','small'),
+P('Original midterm repository: https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System','small'),
 P('scikit-learn text feature extraction: https://scikit-learn.org/stable/modules/feature_extraction.html','small'),
 P('Sentence Transformers multilingual models: https://www.sbert.net/docs/sentence_transformer/pretrained_models.html','small'),
 P('Argos Translate docs: https://argos-translate.readthedocs.io/en/stable/index.html','small'),
@@ -230,7 +228,7 @@ exec_story=[Spacer(1,35),P('FINAL PROJECT  /  EXECUTIVE SUMMARY','eyebrow'),
  P('A newsroom release would still need licensed multi-publisher data, external multilingual evaluation, independently rated summarization and answer support, accuracy and calibration testing on new sources, authentication, monitoring and human editorial acceptance. The frontend has not been independently browser-tested or deployed to a public URL in the current environment.'),
 
  P('Submission: José Miguel Tuozzo Izaguirre · Provisional group: JoseGroup · ITAI 2373','small'),
- P('GitHub base: https://github.com/jtuozzo1616/Mid-Term-Jose-Group-NewsBot-Intelligence-System','small'),
+ P('GitHub base: https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System','small'),
  P('Instructor review pending; use the detailed Canvas final-project rubric to confirm any additional requirements.','small')]
 p2=create(EXEC,exec_story)
 

@@ -1,0 +1,15 @@
+# Final submission documents
+
+**ITAI 2373 · NewsBot Intelligence System 2.0 · José Miguel Tuozzo Izaguirre · JoseGroup**
+
+| Deliverable | File |
+|---|---|
+| Technical documentation | [FP_TechnicalDoc_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf](FP_TechnicalDoc_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf) |
+| Executive summary | [FP_ExecutiveSummary_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf](FP_ExecutiveSummary_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf) |
+| Presentation | [FP_Presentation_JoseMiguelTuozzo_JoseGroup_ITAI2373.pptx](FP_Presentation_JoseMiguelTuozzo_JoseGroup_ITAI2373.pptx) |
+| Reflective journal | [FP_ReflectiveJournal_JoseGroup_ITAI2373.pdf](FP_ReflectiveJournal_JoseGroup_ITAI2373.pdf) |
+| Repository links | [FP_GitHub_Links_ITAI2373.pdf](FP_GitHub_Links_ITAI2373.pdf) |
+
+The November 25 student-provided journal replaces the earlier draft. The PDF here is a reformatted reading copy of the supplied five-page text, not the byte-identical original attachment. The report and executive summary are reformatted reading copies of the prior deliverables with renamed repository links. The PPTX is a reconstructed 11-slide version of the earlier presentation. For Canvas, use the original student PDF and the original presentation/report files if exact formatting is required. The original journal's SHA-256 is `8a66820781251a6e276d5af3be8c21d99585229f5f8b11c008b28bb3a32917af`. [Contribution record](../docs/CONTRIBUTIONS.md).
+
+[Return to instructor review](../../README.md) · [Rubric and results](../docs/FINAL_SUBMISSION_REVIEW.md).

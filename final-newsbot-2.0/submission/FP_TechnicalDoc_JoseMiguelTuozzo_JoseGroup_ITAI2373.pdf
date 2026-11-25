@@ -1,0 +1,375 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 7 /Kids [7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 4769 >>
+stream
+0.04 0.25 0.33 rg 0 740 612 52 re f
+1 1 1 rg BT /F2 12 Tf 1 0 0 1 48 765 Tm (NEWSBOT INTELLIGENCE SYSTEM 2.0  /  ITAI 2373) Tj ET
+0.81 0.92 0.94 rg BT /F1 9 Tf 1 0 0 1 48 750 Tm (Technical documentation) Tj ET
+0.09 0.60 0.59 rg 48 725 516 3 re f
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 708 Tm (Technical documentation) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 694.4 Tm (Jos\351 Miguel Tuozzo Izaguirre | NewsBot Intelligence System 2.0) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 667.1999999999999 Tm (November 2026 \225 Group filename label: JoseGroup \(provisional\)) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 639.9999999999999 Tm (Abstract) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 626.3999999999999 Tm (NewsBot Intelligence System 2.0 extends a historical BBC news classifier into a local-first NLP) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 612.7999999999998 Tm (research workspace. It combines document classification, unsupervised topic discovery, lexical) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 599.1999999999998 Tm (sentiment, extractive summaries, cross-language search and an evidence-grounded conversational) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 585.5999999999998 Tm (interface. The central design decision is to separate retrieval relevance from factual truth and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 571.9999999999998 Tm (model) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 558.3999999999997 Tm (confidence from measured generalization.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 531.1999999999997 Tm (Scope and success criteria) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 517.5999999999997 Tm (The capstone is an executable educational prototype, not a live newsroom service. Its default 30) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 503.99999999999966 Tm (articles are fictional fixtures across five categories and four languages. The system must) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 490.39999999999964 Tm (preserve) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 476.7999999999996 Tm (source identifiers, expose method provenance, handle unavailable language resources explicitly,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 463.1999999999996 Tm (and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 449.59999999999957 Tm (allow a reviewer to reproduce experiments without a paid API.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 422.3999999999995 Tm (Component                         Implementation evidence) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 395.1999999999995 Tm (Content analysis                  Logistic regression / optional trusted BBC classifier; NMF,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 381.59999999999945 Tm (VADER or lexical fallback,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 367.99999999999943 Tm (candidate entities.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 340.7999999999994 Tm (Understanding &                   Centroid/MMR extraction; TF-IDF and LSA; optional sentence) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 327.19999999999936 Tm (embeddings; template) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 313.59999999999934 Tm (generation                        headlines.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 286.3999999999993 Tm (Multilingual                      EN/ES/FR/DE language hints, pivot vocabulary, language filter,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 272.7999999999993 Tm (optional Argos) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 259.19999999999925 Tm (translation.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 231.99999999999926 Tm (Conversation                      Source excerpts, citation IDs, bounded follow-up memory,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 218.39999999999927 Tm (abstention.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 191.19999999999928 Tm (Bonus candidates                  Five-tab Streamlit UI; paired research comparisons and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 177.59999999999928 Tm (distribution-shift diagnostics.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 150.3999999999993 Tm (Final implementation: GitHub / final-newsbot-2.0) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 123.1999999999993 Tm (Technical documentation | NewsBot 2.0                                                             ) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 109.59999999999931 Tm (1) Tj ET
+0.80 0.84 0.86 RG 48 36 m 564 36 l S
+0.35 0.42 0.48 rg BT /F1 8 Tf 1 0 0 1 48 22 Tm (Houston Community College  |  Final capstone  |  November 2026) Tj ET
+0.35 0.42 0.48 rg BT /F2 8 Tf 1 0 0 1 535 22 Tm (1/7) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 4493 >>
+stream
+0.04 0.25 0.33 rg 0 740 612 52 re f
+1 1 1 rg BT /F2 12 Tf 1 0 0 1 48 765 Tm (NEWSBOT INTELLIGENCE SYSTEM 2.0  /  ITAI 2373) Tj ET
+0.81 0.92 0.94 rg BT /F1 9 Tf 1 0 0 1 48 750 Tm (Technical documentation) Tj ET
+0.09 0.60 0.59 rg 48 725 516 3 re f
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 708 Tm (Architecture and data contracts) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 694.4 Tm (Architecture and trust boundaries) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 680.8 Tm (CSV or JSONL -> schema validation -> normalized article records -> classification / sentiment / NMF) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 667.1999999999999 Tm (/ summary -> TF-IDF or optional LSA / embeddings -> ranked source excerpts -> chat, Streamlit,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 653.5999999999999 Tm (FastAPI and CLI. The API uses a local fixture and stateless chat requests; the Streamlit) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 639.9999999999999 Tm (application) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 626.3999999999999 Tm (maintains conversation state per session.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 599.1999999999998 Tm (Layer                             Responsibilities and risk controls) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 571.9999999999998 Tm (Input                             Safe article IDs; title and body bounds; HTTP\(S\) source URLs;) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 558.3999999999997 Tm (duplicate ID rejection;) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 544.7999999999997 Tm (import limits.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 517.5999999999997 Tm (Provenance                        SHA-256 content fingerprint, source name, stable ID, synthetic) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 503.99999999999966 Tm (flag. Hash proves) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 490.39999999999964 Tm (normalized content identity, not publisher authenticity.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 463.1999999999996 Tm (Analysis                          Independent classifier, sentiment, entities and topic) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 449.59999999999957 Tm (components; model origin and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 435.99999999999955 Tm (fallback labels.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 408.7999999999995 Tm (Retrieval                         Cosine scores, stable tie-breaks, source language filtering) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 395.1999999999995 Tm (before top-k, contiguous) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 381.59999999999945 Tm (query-relevant evidence excerpts.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 354.3999999999994 Tm (Interface                         Five Streamlit tabs, HTTP routes and terminal commands. No) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 340.7999999999994 Tm (external URLs fetched) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 327.19999999999936 Tm (by backend.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 299.9999999999993 Tm (Reproducibility and leakage) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 286.3999999999993 Tm (The inherited BBC classifier is distinct from new synthetic models. Cross-validation fits) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 272.7999999999993 Tm (vectorizers) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 259.19999999999925 Tm (inside training folds, then predicts held-out records. Corpus-level topic fitting is exploratory,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 245.59999999999926 Tm (not an) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 231.99999999999926 Tm (evaluation of category accuracy. Deserializing joblib is a trust boundary: only load a known local) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 218.39999999999927 Tm (model. The frontend searches both the final folder and original midterm outputs directory.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 191.19999999999928 Tm (Technical documentation | NewsBot 2.0                                                             ) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 177.59999999999928 Tm (2) Tj ET
+0.80 0.84 0.86 RG 48 36 m 564 36 l S
+0.35 0.42 0.48 rg BT /F1 8 Tf 1 0 0 1 48 22 Tm (Houston Community College  |  Final capstone  |  November 2026) Tj ET
+0.35 0.42 0.48 rg BT /F2 8 Tf 1 0 0 1 535 22 Tm (2/7) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 4416 >>
+stream
+0.04 0.25 0.33 rg 0 740 612 52 re f
+1 1 1 rg BT /F2 12 Tf 1 0 0 1 48 765 Tm (NEWSBOT INTELLIGENCE SYSTEM 2.0  /  ITAI 2373) Tj ET
+0.81 0.92 0.94 rg BT /F1 9 Tf 1 0 0 1 48 750 Tm (Technical documentation) Tj ET
+0.09 0.60 0.59 rg 48 725 516 3 re f
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 708 Tm (NLP algorithms and trade-offs) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 694.4 Tm (Classification and topic modeling) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 680.8 Tm (TF-IDF weights informative terms by inverse document frequency. The local logistic model uses word) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 667.1999999999999 Tm (unigrams and bigrams; an optional historical model can be loaded for inference. Class scores are) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 653.5999999999999 Tm (explicitly uncalibrated. NMF factorizes the nonnegative document-term matrix X approximately into) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 639.9999999999999 Tm (W times H; document weights assign exploratory topics and component weights identify) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 626.3999999999999 Tm (representative terms. Topic labels are not ground truth.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 599.1999999999998 Tm (Sentiment and entity extraction) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 585.5999999999998 Tm (English VADER is used when its resource is installed; otherwise a weak token lexicon estimates) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 571.9999999999998 Tm (tone. It cannot reliably handle sarcasm, negation, domain shift or language-specific nuance.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 558.3999999999997 Tm (Optional) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 544.7999999999997 Tm (English spaCy extracts typed entities; the fallback returns candidate proper names and explicitly) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 531.1999999999997 Tm (distinguishes them from validated NER.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 503.99999999999966 Tm (Summarization and content enhancement) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 490.39999999999964 Tm (The extractive method ranks original sentences by similarity to the document centroid and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 476.7999999999996 Tm (subtracts) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 463.1999999999996 Tm (a redundancy penalty \(0.35 times maximum similarity to an already selected sentence\). Selected) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 449.59999999999957 Tm (sentences are reordered by original position. This preserves source wording but may omit essential) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 435.99999999999955 Tm (qualifiers. Headline variants are templates, not neural generation; editorial review remains) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 422.3999999999995 Tm (necessary.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 395.1999999999995 Tm (Retrieval) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 381.59999999999945 Tm (TF-IDF represents the pivot-normalized article and query as sparse vectors. Cosine similarity is) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 367.99999999999943 Tm (the) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 354.3999999999994 Tm (dot product divided by the product of vector norms. Optional truncated SVD projects the same) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 340.7999999999994 Tm (representation into a latent space; optional pretrained multilingual embeddings require explicitly) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 327.19999999999936 Tm (downloaded weights. Relevance is not answer probability. Source filters now operate before ranking) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 313.59999999999934 Tm (cutoffs; adjacent sentence windows prioritize query overlap.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 286.3999999999993 Tm (Technical documentation | NewsBot 2.0                                                             ) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 272.7999999999993 Tm (3) Tj ET
+0.80 0.84 0.86 RG 48 36 m 564 36 l S
+0.35 0.42 0.48 rg BT /F1 8 Tf 1 0 0 1 48 22 Tm (Houston Community College  |  Final capstone  |  November 2026) Tj ET
+0.35 0.42 0.48 rg BT /F2 8 Tf 1 0 0 1 535 22 Tm (3/7) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 4905 >>
+stream
+0.04 0.25 0.33 rg 0 740 612 52 re f
+1 1 1 rg BT /F2 12 Tf 1 0 0 1 48 765 Tm (NEWSBOT INTELLIGENCE SYSTEM 2.0  /  ITAI 2373) Tj ET
+0.81 0.92 0.94 rg BT /F1 9 Tf 1 0 0 1 48 750 Tm (Technical documentation) Tj ET
+0.09 0.60 0.59 rg 48 725 516 3 re f
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 708 Tm (Multilingual and conversational intelligence) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 694.4 Tm (Language policy) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 680.8 Tm (Language identification uses stopword counts and returns undetermined when evidence is sparse or) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 667.1999999999999 Tm (tied. The finite multilingual pivot maps selected domain vocabulary to English concepts. It is) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 653.5999999999999 Tm (interpretable and fast but cannot represent arbitrary paraphrase, morphology, idioms or) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 639.9999999999999 Tm (translation) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 626.3999999999999 Tm (fidelity. Argos Translate is an optional offline provider and requires installed language packs;) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 612.7999999999998 Tm (missing) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 599.1999999999998 Tm (packs return unavailable. Optional multilingual sentence embeddings are a separate, explicitly) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 585.5999999999998 Tm (enabled model path.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 558.3999999999997 Tm (Answer construction and abstention) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 544.7999999999997 Tm (The conversation engine retrieves up to three sources by default. If the best similarity is below) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 531.1999999999997 Tm (0.025) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 517.5999999999997 Tm (or no hit exists, it asks for more specific evidence. Otherwise it selects hits with scores at) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 503.99999999999966 Tm (least) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 490.39999999999964 Tm (max\(0.025, 0.5 \327 best score\), returning source IDs and excerpts. These thresholds are heuristics) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 476.7999999999996 Tm (rather than calibrated correctness guarantees. Follow-ups can append the previously cited article) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 463.1999999999996 Tm (title) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 449.59999999999957 Tm (to resolve certain anaphoric queries; context is bounded to 12 turns.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 422.3999999999995 Tm (Test scenario                     Expected behavior) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 395.1999999999995 Tm (Relevant query                    Return an original passage and stable article ID.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 367.99999999999943 Tm (Unknown topic                     Return insufficient_evidence and no citation.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 340.7999999999994 Tm (Language filter                   Only articles with requested source language enter top-k.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 313.59999999999934 Tm (Later evidence                    Relevant contiguous sentence window, not necessarily first) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 299.9999999999993 Tm (sentences.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 272.7999999999993 Tm (Missing translation assets        Explicit unavailable status; no fabricated translated output.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 245.59999999999926 Tm (Threat model) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 231.99999999999926 Tm (Untrusted articles are data, not instructions. Extractive answers limit unsupported generation but) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 218.39999999999927 Tm (do) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 204.79999999999927 Tm (not verify news claims. For public deployment, add authentication, rate limits, TLS, audit) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 191.19999999999928 Tm (logging,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 177.59999999999928 Tm (content licensing review, accessibility testing and operational monitoring.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 150.3999999999993 Tm (Technical documentation | NewsBot 2.0                                                             ) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 136.7999999999993 Tm (4) Tj ET
+0.80 0.84 0.86 RG 48 36 m 564 36 l S
+0.35 0.42 0.48 rg BT /F1 8 Tf 1 0 0 1 48 22 Tm (Houston Community College  |  Final capstone  |  November 2026) Tj ET
+0.35 0.42 0.48 rg BT /F2 8 Tf 1 0 0 1 535 22 Tm (4/7) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 4250 >>
+stream
+0.04 0.25 0.33 rg 0 740 612 52 re f
+1 1 1 rg BT /F2 12 Tf 1 0 0 1 48 765 Tm (NEWSBOT INTELLIGENCE SYSTEM 2.0  /  ITAI 2373) Tj ET
+0.81 0.92 0.94 rg BT /F1 9 Tf 1 0 0 1 48 750 Tm (Technical documentation) Tj ET
+0.09 0.60 0.59 rg 48 725 516 3 re f
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 708 Tm (Experimental results and validity) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 694.4 Tm (Three separate evidence levels) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 667.1999999999999 Tm (Experiment                        Measured outcome                    Interpretation) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 639.9999999999999 Tm (Historic BBC holdout \(midterm\)    96.18% accuracy; 0.9605 macro-F1    288 historic articles; not) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 626.3999999999999 Tm (2.0) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 612.7999999999998 Tm (performance.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 585.5999999999998 Tm (Synthetic CV \(2.0\)                56.67% accuracy; 0.5371 macro-F1    30 fictional samples; 3-fold) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 571.9999999999998 Tm (stratified) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 558.3999999999997 Tm (OOF.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 531.1999999999997 Tm (Controlled retrieval \(2.0\)        1.000 MRR@3 and Recall@3 with       24 hand-authored, partly) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 517.5999999999997 Tm (pivot; 0.625 without                post-inspection probes; no external) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 503.99999999999966 Tm (validity.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 476.7999999999996 Tm (Business F1 = 0.25, entertainment = 0.364, politics = 0.533, sport = 0.769 and tech = 0.769 in the) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 463.1999999999996 Tm (stored synthetic experiment. Business recall \(1 of 6\) is especially weak. The confusion matrix) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 449.59999999999957 Tm (indicates category ambiguity and data scarcity; these numbers motivate better features and an) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 435.99999999999955 Tm (independent multilingual corpus rather than a claim of improvement.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 408.7999999999995 Tm (Additional research extension) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 395.1999999999995 Tm (The paired experiment compares word TF-IDF, pivot-normalized word TF-IDF and pivot plus) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 381.59999999999945 Tm (character 3\2265-gram features using identical three-fold splits. Feature fitting remains inside each) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 367.99999999999943 Tm (fold.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 354.3999999999994 Tm (Leave-one-language-out evaluation tests language shift. The script records per-record predictions,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 340.7999999999994 Tm (confusion matrices, macro-F1, accuracy, language counts and execution time. The new CI measured) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 327.19999999999936 Tm (baseline accuracy/F1 0.5667/0.5371, pivot 0.6000/0.5720 and pivot plus characters 0.6667/0.6143.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 313.59999999999934 Tm (The paired gain is 0.0772 macro-F1; these 30 fictional records are not an independent benchmark.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 299.9999999999993 Tm (No model selection on reported folds is claimed.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 272.7999999999993 Tm (Evidence: stored experiment artifacts; successful final CI run \(27 tests\).) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 245.59999999999926 Tm (Technical documentation | NewsBot 2.0                                                             ) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 231.99999999999926 Tm (5) Tj ET
+0.80 0.84 0.86 RG 48 36 m 564 36 l S
+0.35 0.42 0.48 rg BT /F1 8 Tf 1 0 0 1 48 22 Tm (Houston Community College  |  Final capstone  |  November 2026) Tj ET
+0.35 0.42 0.48 rg BT /F2 8 Tf 1 0 0 1 535 22 Tm (5/7) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 5100 >>
+stream
+0.04 0.25 0.33 rg 0 740 612 52 re f
+1 1 1 rg BT /F2 12 Tf 1 0 0 1 48 765 Tm (NEWSBOT INTELLIGENCE SYSTEM 2.0  /  ITAI 2373) Tj ET
+0.81 0.92 0.94 rg BT /F1 9 Tf 1 0 0 1 48 750 Tm (Technical documentation) Tj ET
+0.09 0.60 0.59 rg 48 725 516 3 re f
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 708 Tm (Operational guide and quality assurance) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 694.4 Tm (Installation and execution) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 680.8 Tm (From the repository root, change into final-newsbot-2.0. Create and activate a virtual environment) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 667.1999999999999 Tm (\(Python 3.11 recommended\), then execute the following commands:) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 639.9999999999999 Tm (python -m pip install -r requirements-dev.txt) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 626.3999999999999 Tm (python -m pytest tests -q) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 612.7999999999998 Tm (python -m newsbot2.cli overview) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 599.1999999999998 Tm (python -m newsbot2.cli search --query "robot navigation sensors") Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 585.5999999999998 Tm (python -m newsbot2.cli ask --query "What did the AI chip researchers measure?") Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 571.9999999999998 Tm (python run_research.py) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 558.3999999999997 Tm (streamlit run app.py) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 544.7999999999997 Tm (uvicorn newsbot2.api:app) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 517.5999999999997 Tm (Verification strategy) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 503.99999999999966 Tm (The preceding final CI completed installation, automated tests, CLI overview, research execution) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 490.39999999999964 Tm (and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 476.7999999999996 Tm (artifact upload successfully. The new commits add source-language and late-evidence regression) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 463.1999999999996 Tm (cases and integrate the paired research experiment into the existing CI pipeline. The updated CI) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 449.59999999999957 Tm (run) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 435.99999999999955 Tm (45679903622 completed successfully: 27 tests passed, one warning; research and artifact upload) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 422.3999999999995 Tm (passed. Optional model inference and browser deployment remain unverified.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 395.1999999999995 Tm (Web frontend and API) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 381.59999999999945 Tm (Command Center provides corpus overview and metadata export; Article Lab exposes analysis and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 367.99999999999943 Tm (provenance; Search & Languages supports query and language filtering; Grounded Chat provides) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 354.3999999999994 Tm (citations; Research Lab displays topics and local cross-validation. FastAPI exposes health,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 340.7999999999994 Tm (overview,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 327.19999999999936 Tm (articles, article analysis, search, chat and topics. Browser-based UI testing and optional model) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 313.59999999999934 Tm (inference remain separate checks.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 286.3999999999993 Tm (Reviewer walkthrough) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 272.7999999999993 Tm (Open the default synthetic corpus. Analyze demo-tech-1, search for robotics in English and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 259.19999999999925 Tm (Spanish,) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 245.59999999999926 Tm (ask what the chip researchers measured, follow up with \223Tell me more about that story,\224 then enter) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 231.99999999999926 Tm (a) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 218.39999999999927 Tm (clearly unrelated query. Inspect the cited ID, evidence and abstention. Run the research script) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 204.79999999999927 Tm (and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 191.19999999999928 Tm (compare the JSON metrics with the reported baselines.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 163.9999999999993 Tm (Technical documentation | NewsBot 2.0                                                             ) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 150.3999999999993 Tm (6) Tj ET
+0.80 0.84 0.86 RG 48 36 m 564 36 l S
+0.35 0.42 0.48 rg BT /F1 8 Tf 1 0 0 1 48 22 Tm (Houston Community College  |  Final capstone  |  November 2026) Tj ET
+0.35 0.42 0.48 rg BT /F2 8 Tf 1 0 0 1 535 22 Tm (6/7) Tj ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 4705 >>
+stream
+0.04 0.25 0.33 rg 0 740 612 52 re f
+1 1 1 rg BT /F2 12 Tf 1 0 0 1 48 765 Tm (NEWSBOT INTELLIGENCE SYSTEM 2.0  /  ITAI 2373) Tj ET
+0.81 0.92 0.94 rg BT /F1 9 Tf 1 0 0 1 48 750 Tm (Technical documentation) Tj ET
+0.09 0.60 0.59 rg 48 725 516 3 re f
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 708 Tm (Responsible use, accountability and references) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 694.4 Tm (Limitations and acceptance criteria) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 680.8 Tm (A production-ready service requires additional operational hardening and externally valid) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 667.1999999999999 Tm (benchmarks. The synthetic corpus does not measure real-news multilingual generalization.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 653.5999999999999 Tm (Translation and pretrained embeddings are integrations, not verified inference in the default) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 639.9999999999999 Tm (environment. The project should not be used for autonomous editorial judgments or factual) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 626.3999999999999 Tm (verification.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 599.1999999999998 Tm (Individual contribution record) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 585.5999999999998 Tm (The midterm repository identifies Jos\351 Miguel Tuozzo Izaguirre as the individual student. The) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 571.9999999999998 Tm (final) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 558.3999999999997 Tm (repository contains implementation and research evidence; contribution authorship and) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 544.7999999999997 Tm (individual/team status must be confirmed by the student and instructor. See) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 531.1999999999997 Tm (docs/CONTRIBUTIONS_TO_VERIFY.md. The draft reflective journal contains prompts for first-hand) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 517.5999999999997 Tm (verification. No fictitious member, meeting or personal action is attributed.) Tj ET
+0.04 0.37 0.39 rg BT /F2 10.9 Tf 1 0 0 1 48 490.39999999999964 Tm (References and evidence) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 476.7999999999996 Tm (Manning, C. D., Raghavan, P., & Sch\374tze, H. \(2008\). Introduction to Information Retrieval.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 463.1999999999996 Tm (Cambridge University Press.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 449.59999999999957 Tm (Lee, D. D., & Seung, H. S. \(1999\). Learning the parts of objects by non-negative matrix) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 435.99999999999955 Tm (factorization.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 422.3999999999995 Tm (Nature, 401, 788\226791.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 408.7999999999995 Tm (Hutto, C. J., & Gilbert, E. \(2014\). VADER: A parsimonious rule-based model for sentiment analysis) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 395.1999999999995 Tm (of) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 381.59999999999945 Tm (social media text. ICWSM.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 367.99999999999943 Tm (Reimers, N., & Gurevych, I. \(2019\). Sentence-BERT: Sentence embeddings using Siamese) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 354.3999999999994 Tm (BERT-networks. EMNLP-IJCNLP.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 340.7999999999994 Tm (scikit-learn documentation; Streamlit documentation; Argos Translate documentation; original) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 327.19999999999936 Tm (project) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 313.59999999999934 Tm (repository.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 286.3999999999993 Tm (The Canvas overview was available; the separate detailed final-project and web-application) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 272.7999999999993 Tm (instructions were not. Confirm) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 259.19999999999925 Tm (the official group name and all rubric-specific requirements before upload.) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 231.99999999999926 Tm (Technical documentation | NewsBot 2.0                                                             ) Tj ET
+0.12 0.17 0.23 rg BT /F1 10.3 Tf 1 0 0 1 48 218.39999999999927 Tm (7) Tj ET
+0.80 0.84 0.86 RG 48 36 m 564 36 l S
+0.35 0.42 0.48 rg BT /F1 8 Tf 1 0 0 1 48 22 Tm (Houston Community College  |  Final capstone  |  November 2026) Tj ET
+0.35 0.42 0.48 rg BT /F2 8 Tf 1 0 0 1 535 22 Tm (7/7) Tj ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 18 0 R >>
+endobj
+xref
+0 20
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000156 00000 n 
+0000000253 00000 n 
+0000000355 00000 n 
+0000000450 00000 n 
+0000005270 00000 n 
+0000005416 00000 n 
+0000009960 00000 n 
+0000010106 00000 n 
+0000014574 00000 n 
+0000014722 00000 n 
+0000019679 00000 n 
+0000019827 00000 n 
+0000024129 00000 n 
+0000024277 00000 n 
+0000029429 00000 n 
+0000029577 00000 n 
+0000034334 00000 n 
+trailer
+<< /Size 20 /Root 1 0 R >>
+startxref
+34482
+%%EOF
