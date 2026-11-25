@@ -23,5 +23,6 @@
     "Argos translation",
     "browser captures"
   ],
-  "note": "The archived experiments were displayed, not rerun in this Colab session. This manifest records the reviewed file; the original executed notebook needs to be uploaded unchanged."
+  "note": "Uploaded byte-identical to student attachment; Git blob and local SHA-256 independently matched. Archived model and BBC results displayed, not rerun in this Colab session.",
+  "git_blob": "fbb7dcbeafe9f83d5d3dc18d6ca17b8e81cc665a"
 }

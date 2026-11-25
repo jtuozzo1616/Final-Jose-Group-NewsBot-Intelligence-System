@@ -1,68 +1,40 @@
 # NewsBot Intelligence System 2.0
 
-**Final Capstone · ITAI 2373 · Natural Language Processing · Houston Community College**
+**Final Capstone · ITAI 2373 — Natural Language Processing · Houston Community College**
 
-**José Miguel Tuozzo Izaguirre | JoseGroup | November 2026**
+José Miguel Tuozzo Izaguirre · JoseGroup · November 2026
 
-[![Final CI](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/newsbot2-final.yml/badge.svg)](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/newsbot2-final.yml)
+[![Open live app](https://img.shields.io/badge/Live%20demo-Streamlit-FF4B4B)](https://final-jose-group-newsbot-intelligence-system-al984gd7vc9uzqmek.streamlit.app/) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/blob/main/final-newsbot-2.0/evidence/NewsBot_JoseT_2_0_Master_Colab.ipynb) [![Final CI](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/newsbot2-final.yml/badge.svg)](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/runs/45698267399)
 
-An evidence-first, local-first news intelligence workspace that extends the historical BBC midterm classifier into a modular NLP platform. It supports article analysis, extractive summarization, multilingual retrieval, cited conversational exploration, and an interactive web interface without a paid API.
+An evidence-first NLP workspace integrating document analysis, classification, topic discovery, multilingual retrieval, neural editorial drafts and source-grounded conversation. The default hosted application uses a lightweight CPU pipeline; neural experiments are reproducible separately.
 
 ## Instructor review — start here
 
-**[Streamlit application](https://final-jose-group-newsbot-intelligence-system-al984gd7vc9uzqmek.streamlit.app/)** — deployment URL supplied by the student; independent public-access verification is still pending. Supports multiple documents (PDF, DOCX, TXT, Markdown, HTML, CSV, JSON and JSONL) after the latest code redeploy. See the user guide for limits.
-
-[Google Colab execution verification](final-newsbot-2.0/evidence/COLAB_VERIFICATION.md): student-supplied integrated notebook passed all eight sections and 33 tests, with saved outputs. The original executed notebook upload and exact public Streamlit URL remain to be confirmed.
-
-**Required individual portfolio:** [ITAI2373-NewsBot-Final](https://github.com/jtuozzo1616/Jose-Tuozzo-AI-Portfolio/tree/main/ITAI2373-NewsBot-Final). This repository is the canonical implementation. The portfolio contains a full snapshot with source revision recorded.
-
-| Deliverable | Open directly |
+| Resource | Access |
 |---|---|
-| Technical documentation | [PDF — technical report](final-newsbot-2.0/submission/FP_TechnicalDoc_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf) |
-| Executive summary | [PDF — executive summary](final-newsbot-2.0/submission/FP_ExecutiveSummary_JoseMiguelTuozzo_JoseGroup_ITAI2373.pdf) |
-| Final presentation | [PowerPoint — 18 slides with speaker notes](final-newsbot-2.0/submission/FP_Presentation_JoseMiguelTuozzo_JoseGroup_ITAI2373.pptx) |
-| Reflective journal | [PDF — 3-page condensed reflection (review required)](final-newsbot-2.0/submission/FP_ReflectiveJournal_JoseGroup_ITAI2373.pdf) |
-| GitHub submission links | [PDF](final-newsbot-2.0/submission/FP_GitHub_Links_ITAI2373.pdf) |
-| Rubric and evidence | [Final submission review](final-newsbot-2.0/docs/FINAL_SUBMISSION_REVIEW.md) |
-| Reproduce the system | [Quick start](final-newsbot-2.0/README.md) · [Verified CI run](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/runs/45680349376) |
-| Research artifacts | [Results](final-newsbot-2.0/artifacts/) · [Research code](final-newsbot-2.0/run_research.py) |
+| **Live web application** | [Open NewsBot](https://final-jose-group-newsbot-intelligence-system-al984gd7vc9uzqmek.streamlit.app/) |
+| **Master notebook — executed in Google Colab** | [View saved results](final-newsbot-2.0/evidence/NewsBot_JoseT_2_0_Master_Colab.ipynb) · [Open in Colab](https://colab.research.google.com/github/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/blob/main/final-newsbot-2.0/evidence/NewsBot_JoseT_2_0_Master_Colab.ipynb) |
+| **Required individual portfolio** | [ITAI2373-NewsBot-Final](https://github.com/jtuozzo1616/Jose-Tuozzo-AI-Portfolio/tree/main/ITAI2373-NewsBot-Final) |
+| Academic submission | [All five deliverables](final-newsbot-2.0/submission/) |
+| Detailed grading audit | [200-point rubric and bonus evidence](final-newsbot-2.0/docs/CANVAS_VERIFICATION.md) |
+| Quality assurance | [38 passing tests and dependency verification](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/runs/45698267399) · [Evidence index](final-newsbot-2.0/evidence/) |
 
-The detailed rubric requires 15–20 slides with notes and a three-page reflection. The new deliverables are generated and verified by the [rubric document workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/rubric-deliverables.yml). The student should personally approve the condensed journal; the original five-page reading copy is preserved. See the submission index for provenance.
+The student confirmed that the hosted application opens and successfully imports PDF and Word after the dependency fix. Independent external browsing could not retrieve the Streamlit page; public access without an account should be checked in a private browser. The master notebook is the byte-identical student-supplied Colab file: eight sections, ten executed code cells, 13 PNG outputs and no saved errors. Its pinned earlier revision passed 33 tests; the latest software CI passed 38.
 
-## Final execution evidence
+## Capabilities
 
-- [Final executable notebook](final-newsbot-2.0/Final_NewsBot_2.0.ipynb) — [open in Colab](https://colab.research.google.com/github/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/blob/main/final-newsbot-2.0/Final_NewsBot_2.0.ipynb) after installing the project dependencies and cloning the repository.
-- [Latest evidence workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/newsbot-evidence.yml) — executes the notebook, real Chromium interactions and neural-model tests. Results must be checked before claiming success.
-- [Deployment instructions](final-newsbot-2.0/docs/DEPLOYMENT.md) — requires hosting-account authorization; public URL pending verification.
-- [Oral defense and live demonstration guide](final-newsbot-2.0/docs/ORAL_DEFENSE.md).
-- [Detailed Canvas verification status](final-newsbot-2.0/docs/CANVAS_VERIFICATION.md).
-
-## Detailed rubric alignment (November 25)
-
-- [Advanced analytics: LDA and NMF, clustering, temporal sentiment, co-mentions and structured queries](final-newsbot-2.0/newsbot2/advanced.py).
-- [Executed notebook and browser evidence](final-newsbot-2.0/evidence/) — prior run verified all five tabs, actual 384-dimensional multilingual embeddings and three ES→EN translations.
-- [Real historical BBC final-pipeline evaluation workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/rubric-verification.yml) — results pending until successful execution; no raw copyrighted text published.
-
-## Rubric documentation and tutorials
-
-[Detailed 200-point crosswalk](final-newsbot-2.0/docs/CANVAS_VERIFICATION.md) · [Seven tutorial notebooks](final-newsbot-2.0/notebooks/) · [Technical specification](final-newsbot-2.0/docs/technical_documentation.md) · [API reference](final-newsbot-2.0/docs/api_reference.md) · [User guide and FAQ](final-newsbot-2.0/docs/user_guide.md) · [Business case and ROI](final-newsbot-2.0/docs/business_analysis.md) · [15-minute defense](final-newsbot-2.0/docs/ORAL_DEFENSE.md).
-
-## New real-data and model evidence
-
-- [Verified FLAN-T5 generation](final-newsbot-2.0/evidence/generation_results.json): three actual pretrained editorial drafts; not independently rated for factuality.
-- [Verified ES→EN translation](final-newsbot-2.0/evidence/translation_results.json) and [384-dimensional MiniLM embedding experiment](final-newsbot-2.0/evidence/embedding_results.json).
-- [Latest 33-test run](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/runs/45691589132) and [seven executed tutorials](final-newsbot-2.0/evidence/tutorials/).
-
-
-- [Real historical BBC evaluation, final pipeline](final-newsbot-2.0/evidence/real_bbc_final_evaluation.json): 250 balanced historical articles, 3-fold CV accuracy 90.8%, macro-F1 0.9079; LDA and NMF also fitted. No raw copyrighted texts published.
-- [Opt-in pretrained FLAN-T5 generation](final-newsbot-2.0/newsbot2/generation.py), [inference workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/newsbot-generation.yml). Neural drafts require human verification; the actual run must pass before claiming evidence.
-
-## System architecture
+| Module | Implementation |
+|---|---|
+| A — Advanced content analysis | Classification with fixed category hierarchy, LDA/NMF, K-means, sentiment evolution and source-linked entity co-mentions |
+| B — Language understanding and generation | MMR extractive summaries, template enhancement, optional FLAN-T5, TF-IDF/LSA/MiniLM search and query expansion |
+| C — Multilingual intelligence | EN/ES/FR/DE language hints, lexical pivot, optional real neural embeddings and ES→EN translation, shared-event coverage comparison |
+| D — Conversation | Intent routing, filters, bounded follow-up, cited excerpts, abstention and report export |
+| Web application | Five interactive tabs, batch processing and import of PDF, DOCX, TXT, Markdown, HTML, CSV, JSON and JSONL |
 
 ```mermaid
 flowchart LR
- A[CSV or JSONL] --> B[Validation and provenance]
- B --> C[Content analysis]
+ A[Documents or structured corpus] --> B[Validation and provenance]
+ B --> C[Analysis and topic models]
  B --> D[Multilingual retrieval]
  C --> E[Shared engine]
  D --> E
@@ -71,31 +43,22 @@ flowchart LR
  F --> G
 ```
 
-| Required capability | Main implementation |
-|---|---|
-| Advanced analysis | [Classification, NMF topics, sentiment, entities](final-newsbot-2.0/newsbot2/analysis.py) |
-| Understanding and generation | [Extractive MMR summaries](final-newsbot-2.0/newsbot2/analysis.py), [ranked search and relevant source windows](final-newsbot-2.0/newsbot2/retrieval.py) |
-| Multilingual intelligence | [Language detection, lexical pivot, optional Argos translation](final-newsbot-2.0/newsbot2/language.py); optional multilingual embeddings |
-| Conversational interface | [Grounded chat, citations, follow-up, abstention](final-newsbot-2.0/newsbot2/chat.py) |
-| Web frontend bonus | [Five-tab Streamlit application](final-newsbot-2.0/app.py) |
-| Research bonus | [Controlled retrieval and classification experiments](final-newsbot-2.0/run_research.py), [paired ablation and language holdout](final-newsbot-2.0/run_robustness.py) |
-
-## Verified experimental evidence
+## Verified evidence
 
 | Evaluation | Result | Scope |
 |---|---:|---|
-| Final automated tests | **33 passed** | Offline core, API, advanced topic and contextual-analysis regression tests |
-| Word baseline macro-F1 | 0.5371 | 30 fictional records, same stratified folds |
-| Pivot word macro-F1 | 0.5720 | Same controlled experiment |
-| Pivot + character macro-F1 | **0.6143** | +0.0772 absolute F1 vs baseline |
-| Retrieval MRR@3 | **1.000 vs 0.625** | 24 selected fictional probes, with vs without pivot |
-| Historical BBC holdout | **96.18% accuracy / 0.9605 macro-F1** | 288 historical articles; midterm only |
+| Latest automated tests | **38 passed** | CI; includes PDF/DOCX ingestion |
+| Master Colab | **8/8 sections** | Earlier pinned revision, 33 tests in Colab |
+| Final BBC classification | **90.8% accuracy / 0.9079 macro-F1** | 250 real historical articles, 3-fold CV |
+| Historical midterm | 96.18% accuracy / 0.9605 macro-F1 | 288 held-out historical BBC records, separate experiment |
+| Paired synthetic classification | 0.5371 → 0.6143 macro-F1 | 30 fictional records; word baseline vs pivot + character features |
+| Synthetic retrieval | 0.625 → 1.000 MRR@3 | 24 selected fictional probes, no pivot vs pivot |
+| Neural retrieval | 0.625 → 0.750 MRR@3 | Four separate selected fictional probes, lexical vs MiniLM |
+| Neural translation / generation | 3 ES→EN translations / 3 FLAN-T5 drafts | Actual model inference, not human-rated quality |
 
-[Verified CI](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/runs/45679903622) · [Permanent verified summary](final-newsbot-2.0/artifacts/verified_final_summary.json) · [Evaluation methodology and limits](final-newsbot-2.0/docs/ARCHITECTURE_AND_LIMITS.md).
+See [evidence index](final-newsbot-2.0/evidence/README.md) for exact run links and data scope. The default corpus is fictional; the real BBC data is historical, not a live news feed. Source citation establishes provenance, not truth. Neural drafts are unverified editorial suggestions. The public demo is not a production-grade newsroom service.
 
-The synthetic results are controlled functional experiments, not real-world accuracy. The retrieval probes were constructed with knowledge of the corpus. Translation and learned multilingual embeddings require installed model assets; the default system uses transparent CPU fallbacks. This is a capstone prototype, not a deployed or independently validated newsroom product.
-
-## Quick demonstration
+## Run locally
 
 ```bash
 git clone https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System.git
@@ -106,14 +69,11 @@ python run_research.py
 streamlit run app.py
 ```
 
-Open the local Streamlit URL printed in the terminal. Explore **Command Center**, **Article Lab**, **Search & Languages**, **Grounded Chat**, and **Research Lab**. See the [quick start](final-newsbot-2.0/README.md) for command-line and API examples.
+## Repository guide
 
-## Repository map
+- [Implementation and setup](final-newsbot-2.0/README.md) · [User guide](final-newsbot-2.0/docs/user_guide.md) · [API](final-newsbot-2.0/docs/api_reference.md) · [Deployment](final-newsbot-2.0/docs/DEPLOYMENT.md)
+- [Seven tutorial notebooks](final-newsbot-2.0/notebooks/) (retained for the rubric) · [Executed evidence](final-newsbot-2.0/evidence/) · [Research code](final-newsbot-2.0/run_research.py)
+- [Technical architecture](final-newsbot-2.0/docs/technical_documentation.md) · [Business case](final-newsbot-2.0/docs/business_analysis.md) · [Contribution record](final-newsbot-2.0/docs/CONTRIBUTIONS.md)
+- [Historical midterm](MIDTERM.md) — archived foundation and separate metrics.
 
-- [final-newsbot-2.0/](final-newsbot-2.0/) — final source, tests, data, experiments and current deliverables.
-- [submission/](final-newsbot-2.0/submission/) — single authoritative reviewer-facing document index.
-- [Historical midterm](MIDTERM.md) — eight original NLP modules and verified BBC evidence (preserved for continuity).
-- [Original executed notebook](docs/NewsBot_Executed_Results.ipynb) and [historical outputs](outputs/) — prior independent evaluation, not final scores.
-- [Contribution record](final-newsbot-2.0/docs/CONTRIBUTIONS.md) — student-supplied reflection and evidence boundaries.
-
-The grade and bonus awards remain the instructor's decision. The two separately specified Canvas instruction downloads were not provided; the review map follows the available assignment overview.
+The course requires the actual individual contribution record and presentation/demo requirements; the grade and bonus awards remain the instructor's decision.
