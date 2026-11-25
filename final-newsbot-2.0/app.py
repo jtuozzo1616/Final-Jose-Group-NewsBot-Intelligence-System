@@ -147,6 +147,10 @@ with tabs[1]:
             st.write(doc['enhancement']['headlines'])
             st.code(doc['enhancement']['short_blurb'],language=None)
             st.caption(doc['enhancement']['guardrail'])
+            if os.getenv('NEWSBOT_ENABLE_NEURAL') == '1' and st.button('Generate pretrained editorial draft'):
+                from newsbot2.generation import generate_brief
+                with st.spinner('Running opt-in pretrained model...'):
+                    st.json(generate_brief(eng.by_id[selected]))
 
 with tabs[2]:
     st.subheader('Cross-language evidence discovery')

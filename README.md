@@ -41,6 +41,11 @@ The detailed rubric requires 15–20 slides with notes and a three-page reflecti
 
 [Detailed 200-point crosswalk](final-newsbot-2.0/docs/CANVAS_VERIFICATION.md) · [Seven tutorial notebooks](final-newsbot-2.0/notebooks/) · [Technical specification](final-newsbot-2.0/docs/technical_documentation.md) · [API reference](final-newsbot-2.0/docs/api_reference.md) · [User guide and FAQ](final-newsbot-2.0/docs/user_guide.md) · [Business case and ROI](final-newsbot-2.0/docs/business_analysis.md) · [15-minute defense](final-newsbot-2.0/docs/ORAL_DEFENSE.md).
 
+## New real-data and model evidence
+
+- [Real historical BBC evaluation, final pipeline](final-newsbot-2.0/evidence/real_bbc_final_evaluation.json): 250 balanced historical articles, 3-fold CV accuracy 90.8%, macro-F1 0.9079; LDA and NMF also fitted. No raw copyrighted texts published.
+- [Opt-in pretrained FLAN-T5 generation](final-newsbot-2.0/newsbot2/generation.py), [inference workflow](https://github.com/jtuozzo1616/Final-Jose-Group-NewsBot-Intelligence-System/actions/workflows/newsbot-generation.yml). Neural drafts require human verification; the actual run must pass before claiming evidence.
+
 ## System architecture
 
 ```mermaid

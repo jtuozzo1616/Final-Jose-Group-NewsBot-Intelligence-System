@@ -16,3 +16,6 @@ Clone the repository, cd final-newsbot-2.0, install `pip install -r requirements
 - Memory pressure? Use a smaller corpus; batch export is bounded. Do not publish confidential/copyrighted text.
 ## Tutorials and demonstration
 See [executed integrated notebook](../evidence/Final_NewsBot_2.0_Executed.ipynb), [seven tutorials](../notebooks/), [browser captures](../evidence/screenshots/), [oral demonstration](ORAL_DEFENSE.md). A student-recorded video is still required for the video-demonstration documentation item; screenshots are not a recording.
+
+## Real-data live demonstration
+Run `python run_real_evidence.py --export-local` from final-newsbot-2.0. With instructor-approved access to the historical BBC data, import `data/raw/bbc_demo_private.jsonl` using the sidebar. This file is excluded from Git; do not redistribute copyrighted content. For the optional neural editorial draft install requirements-generation.txt and set NEWSBOT_ENABLE_NEURAL=1; model output is an unverified draft.

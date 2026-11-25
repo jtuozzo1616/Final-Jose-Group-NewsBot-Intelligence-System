@@ -3,10 +3,10 @@ Core 200: repository 50; advanced analysis 75; documentation 40; presentation 35
 | Item | Evidence | Status |
 |---|---|---|
 | Repository structure and quality (50) | src facade, config, notebooks, tests, data, docs, reports, README | source published; portfolio placement and run verification required |
-| Topic discovery (20) | advanced.py LDA/NMF, monthly distributions, K-means, UI charts | implemented; dated multi-period evaluation limited |
-| Language models (20) | MMR, contextual retrieval, template generation, expansion, verified MiniLM | embedding execution verified; pretrained text generation separate, not assumed |
+| Topic discovery (20) | advanced.py LDA/NMF, monthly distributions, K-means, UI charts | implemented; 32 tests passed and both models fitted on 250 real historical records; dated multi-period evaluation limited |
+| Language models (20) | MMR, contextual retrieval, template generation, expansion, verified MiniLM | embedding execution verified; opt-in pretrained FLAN-T5 implemented with strict inference workflow, verify completion |
 | Multilingual (20) | ES→EN Argos evidence, four language hints, comparison | ES→EN verified; cultural interpretation requires human context |
-| Conversation (15) | intent routing, multi-part filters, context, cited answers | implemented, tests and browser run required |
+| Conversation (15) | intent routing, multi-part filters, context, cited answers | implemented; 32 tests passed; updated browser run must be checked |
 | Technical docs (15) | architecture, API, installation, configuration | published |
 | User docs (15) | guide, tutorials, FAQ, demo | recorded video remains student task |
 | Business docs (10) | ROI scenario, use cases, competitor comparison | published |

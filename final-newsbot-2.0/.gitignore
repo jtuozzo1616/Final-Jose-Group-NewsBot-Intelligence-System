@@ -6,3 +6,7 @@ __pycache__/
 *.log
 *.joblib
 .DS_Store
+
+# Private licensed article texts
+/data/raw/*.csv
+/data/raw/*.jsonl

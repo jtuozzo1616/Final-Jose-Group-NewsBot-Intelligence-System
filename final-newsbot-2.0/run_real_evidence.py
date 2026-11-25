@@ -22,6 +22,14 @@ for row in sorted(rows,key=lambda r:int(r['ArticleId'])):
     seen.add(key);counts[label]=counts.get(label,0)+1
     articles.append(Article('bbc-'+row['ArticleId'],'BBC historical article '+row['ArticleId'],body,source='BBC historical research corpus',category=label,language='en',synthetic=False))
 assert len(articles)==250,counts
+# Optional private local demo file; never added to Git or published.
+import sys
+if '--export-local' in sys.argv:
+    from newsbot2.io import export_jsonl
+    private=ROOT/'data'/'raw'/'bbc_demo_private.jsonl'
+    private.parent.mkdir(exist_ok=True)
+    export_jsonl(articles,private)
+    print('Local real-data demo:',private)
 cv=evaluate_classification_cv(articles,folds=3)
 topics={m:discover_topics(articles,5,m) for m in ('lda','nmf')}
 # Save no article text or excerpts. The topic terms are aggregate statistics.
