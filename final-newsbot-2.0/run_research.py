@@ -85,3 +85,9 @@ manifest={'experiment':'NewsBot 2.0 — transparently synthetic controlled probe
 print('Saved artifacts/research_results.json')
 print('Retrieval MRR@3 pivot / no pivot:',pivoted['mrr_at_k'],round(naive_mrr,4))
 print('Synthetic classification CV macro-F1:',cv['macro_f1'])
+
+# Include the paired multilingual experiment in the CI-uploaded evidence manifest.
+from run_robustness import main as run_robustness
+run_robustness()
+manifest['paired_multilingual_extension']=json.loads((ART/'robustness_results.json').read_text(encoding='utf-8'))
+(ART/'research_results.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False),encoding='utf-8')
