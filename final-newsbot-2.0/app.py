@@ -18,14 +18,14 @@ ROOT=Path(__file__).parent
 
 st.markdown('''<style>
 :root { --navy: #101c30; --ink: #dfe9f9; --muted: #a1b2c6; --accent: #59d1c6; }
-[data-testid="stAppViewContainer"] { background:radial-gradient(ellipse at top left,#192d43 0%,#0a121f 63%);color:#e8eef7; }
-[data-testid="stSidebar"] { background:#111e30; }
+[data-testid="stAppViewContainer"] { background:var(--background-color);color:var(--text-color); }
+[data-testid="stSidebar"] { background:var(--secondary-background-color); }
 h1,h2,h3 { letter-spacing:-.035em; }
-div[data-testid="stMetric"] { background:#15273c;border:1px solid #2a475d;padding:17px;border-radius:12px; }
+div[data-testid="stMetric"] { background:var(--secondary-background-color);border:1px solid #7895ae66;padding:17px;border-radius:12px; }
 .stTabs [data-baseweb="tab-list"]{gap:14px}.stTabs [data-baseweb="tab"]{padding:10px 17px}
 .newshero {padding:28px 30px;border:1px solid #294960;border-radius:16px;
  background:linear-gradient(108deg,#183951,#0e1e32 65%);margin-bottom:23px}
-.newshero h1{font-size:42px;margin:5px 0 9px}.eyebrow{color:#59d1c6;text-transform:uppercase;letter-spacing:.13em;font-size:12px;font-weight:700}
+.newshero h1{font-size:42px;margin:5px 0 9px;color:#e8eef7}.eyebrow{color:#59d1c6;text-transform:uppercase;letter-spacing:.13em;font-size:12px;font-weight:700}
 .caption{color:#b2c4d6;font-size:14px}
 </style>''',unsafe_allow_html=True)
 
@@ -52,7 +52,7 @@ with st.sidebar:
     st.caption('ITAI 2373 · Final capstone')
     st.markdown('**Corpus and provenance**')
     uploaded=st.file_uploader('Import your own articles (.csv / .jsonl)',type=['csv','jsonl'],
-          help='Columns: article_id, title, body. Optional: category, language, source, synthetic.')
+          help='Maximum 8 MB. Columns: article_id, title, body. Optional: category, language, source, synthetic.')
     if uploaded is not None and st.button('Load uploaded corpus',use_container_width=True):
         try:
             with tempfile.TemporaryDirectory() as tmp:
